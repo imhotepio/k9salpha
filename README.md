@@ -2,9 +2,9 @@
 
 # K9s𝜶 Kubernetes CLI To Manage Your Clusters In Style!
 
-From the creator of K9s, comes the next generation of k9s utilities.
+From the creator of K9s, comes the next generation of Kubernetes utilities.
 
-K9s provides a terminal UI to interact with your Kubernetes clusters.
+K9s𝜶 provides a terminal UI to interact with your Kubernetes clusters.
 The aim of this project is to make it easier to navigate, observe and manage
 your applications in the wild. K9s continually watches Kubernetes
 for changes and offers subsequent commands to interact with your observed resources.
