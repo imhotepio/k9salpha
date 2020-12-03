@@ -1,10 +1,6 @@
 <img src="assets/k9salpha.png" alt="k9salpha">
 
-<div style="text-align:center;color: green">
-  <h1>K9s𝜶</h1>
-</div>
-
-# Kubernetes CLI To Manage Your Clusters In Style!
+# K9s𝜶 Kubernetes CLI To Manage Your Clusters In Style!
 
 From the creator of K9s, comes the next generation of k9s utilities.
 
