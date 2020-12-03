@@ -21,7 +21,7 @@ MY_LICENSE_KEY
 
 ## Documentation
 
-Installation and operational documentation resides in [K9s𝞪 Documentation](https://k9salpha.io)
+Operational and historical documents resides in [K9s𝞪 Documentation](https://k9salpha.io)
 
 ## Contributors
 
