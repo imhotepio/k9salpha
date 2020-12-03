@@ -1,7 +1,8 @@
 <img src="assets/k9salpha.png" alt="k9salpha">
 
-<center><h1>K9s𝜶</h1></center>
-
+<div style="text-align:center;color: green">
+  <h1>K9s𝜶</h1>
+</div>
 
 # Kubernetes CLI To Manage Your Clusters In Style!
 
