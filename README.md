@@ -1,6 +1,6 @@
 <img src="assets/k9salpha.png" alt="k9salpha">
 
-# K9s𝞪
+# k9s𝞪
 
 > Kubernetes CLI To Manage Your Clusters In Style!
 
