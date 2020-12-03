@@ -1,4 +1,4 @@
-# K9sAlpha
+# k9s𝜶
 
 > Kubernetes CLI To Manage Your Clusters In Style!
 
