@@ -1,6 +1,6 @@
 <img src="assets/k9salpha.png" alt="k9salpha">
 
-# K9s𝜶 Kubernetes CLI To Manage Your Clusters In Style!
+# K9s𝜶-Kubernetes CLI To Manage Your Clusters In Style!
 
 From the creator of K9s, comes the next generation of k9s utilities.
 
