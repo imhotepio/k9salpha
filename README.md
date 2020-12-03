@@ -15,13 +15,13 @@ for changes and offers subsequent commands to interact with your observed resour
 
 ## Documentation
 
-[K9s𝞪 Historical Documents](https://k9salpha.io)
+[Historical Documents](https://k9salpha.io)
 
 ## Contributors
 
 * [Fernand Galiana](https://github.com/imhotepio)
   * <img src="assets/mail.png" width="16" height="auto" alt="email"/>  fernand@imhotep.io
-  * <img src="assets/twitter.png" width="16" height="auto" alt="twitter"/> [@k9salpha](https://twitter.com/k9salpha?lang=en)
+  * <img src="assets/twitter.png" width="16" height="auto" alt="twitter"/> [@K9s𝜶](https://twitter.com/k9salpha?lang=en)
 
 <hr/>
 
