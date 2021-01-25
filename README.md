@@ -1,6 +1,6 @@
-<img src="assets/k9salpha.png" alt="k9salpha">
+<img src="assets/k9sa_blue_300.png" alt="k9salpha">
 
-# K9s𝜶 - Manage Your Kubernetes Clusters In Style!
+# K9sAlpha - Manage Your Kubernetes Clusters In Style!
 
 From the creator of K9s, comes the next generation of Kubernetes utilities.
 
