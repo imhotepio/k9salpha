@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang=" en ">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Config</title>
+  <meta name="description"
+    content="">
+
+  <link rel="stylesheet" href=" /css/main.css ">
+  <link rel="canonical" href="http://localhost:4000/topics/config/">
+  <link rel="alternate" type="application/rss+xml" title="K9sAlpha - Manage Your Kubernetes Clusters In Style" href="http://localhost:4000 /feed.xml
+    ">
+  <script src="https://kit.fontawesome.com/b45e86135f.js" crossorigin="anonymous"></script>
+</head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133652966-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-133652966-1');
+</script>
+
+<body>
+  <header class="site-header" role="banner">
+  <div class="logo">
+    <a class="site-logo" href="/">k9s𝞪</a>
+  </div>
+  <div class="cite">
+    Kubernetes CLI To Manage Your Clusters In Style!
+  </div>
+</header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      <div>
+  <p><i class="fas fa-cogs icon fa-7x"></i></p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="configuration">Configuration</h1>
+
+<p><br /></p>
+
+<h2 id="-overview"><img src="/assets/sections/overview.png" width="auto" height="32" /> Overview</h2>
+
+<p>K9s keeps its configurations in a .k9s directory in your home directory <code class="highlighter-rouge">$HOME/.k9s</code>. The main configuration file is named <code class="highlighter-rouge">config.yml</code> and stores various K9s specific bits. This file
+will be updated by k9s to store current view and namespaces information.</p>
+
+<p><br /></p>
+<div class="note">
+  <i class="fas fa-skull"></i> This is still in flux and will change while in pre-release stage!
+</div>
+
+<p><br /></p>
+
+<h2 id="-k9s-cli-configuration"><img src="/assets/sections/examples.png" width="auto" height="32" /> K9s CLI Configuration</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.k9s/config.yml</span>
+<span class="na">k9s</span><span class="pi">:</span>
+  <span class="c1"># Represents ui poll intervals. Default 2secs</span>
+  <span class="na">refreshRate</span><span class="pi">:</span> <span class="s">2</span>
+  <span class="c1"># Number of retries once the connection to the api-server is lost. Default 15.</span>
+  <span class="na">maxConnRetry</span><span class="pi">:</span> <span class="s">5</span>
+  <span class="c1"># Enable mouse support. Default false</span>
+  <span class="na">enableMouse</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="c1"># Set to true to hide K9s header. Default false</span>
+  <span class="na">headless</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="c1"># Set to true to hide K9s crumbs. Default false</span>
+  <span class="na">crumbsless</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="c1"># Indicates whether modification commands like delete/kill/edit are disabled. Default is false</span>
+  <span class="na">readOnly</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="c1"># Toggles icons display as not all terminal support these chars.</span>
+  <span class="na">noIcons</span><span class="pi">:</span> <span class="no">false</span>
+
+  <span class="c1"># Logs configuration</span>
+  <span class="na">logger</span><span class="pi">:</span>
+    <span class="c1"># Defines the number of lines to return. Default 100</span>
+    <span class="na">tail</span><span class="pi">:</span> <span class="s">200</span>
+    <span class="c1"># Defines the total number of log lines to allow in the view. Default 1000</span>
+    <span class="na">buffer</span><span class="pi">:</span> <span class="s">500</span>
+    <span class="c1"># Represents how far to go back in the log timeline in seconds. Setting to -1 will show all available logs. Default is 5mins.</span>
+    <span class="na">sinceSeconds</span><span class="pi">:</span> <span class="s">300</span>
+    <span class="c1"># Go full screen while displaying logs. Default false</span>
+    <span class="na">fullScreenLogs</span><span class="pi">:</span> <span class="no">false</span>
+    <span class="c1"># Toggles log line wrap. Default false</span>
+    <span class="na">textWrap</span><span class="pi">:</span> <span class="no">false</span>
+    <span class="c1"># Toggles log line timestamp info. Default false</span>
+    <span class="na">showTime</span><span class="pi">:</span> <span class="no">false</span>
+
+  <span class="c1"># Indicates the current Kube context. Defaults to current context</span>
+  <span class="na">currentContext</span><span class="pi">:</span> <span class="s">minikube</span>
+  <span class="c1"># Indicates the current kube cluster. Defaults to current context cluster</span>
+  <span class="na">currentCluster</span><span class="pi">:</span> <span class="s">minikube</span>
+  <span class="c1"># Persists per cluster preferences for favorite namespaces and view.</span>
+
+  <span class="na">clusters</span><span class="pi">:</span>
+    <span class="na">cluster1</span><span class="pi">:</span>
+      <span class="na">namespace</span><span class="pi">:</span>
+        <span class="na">active</span><span class="pi">:</span> <span class="s">coolio</span>
+        <span class="na">favorites</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">cassandra</span>
+        <span class="pi">-</span> <span class="s">default</span>
+      <span class="na">view</span><span class="pi">:</span>
+        <span class="na">active</span><span class="pi">:</span> <span class="s">po</span>
+      <span class="na">featureGates</span><span class="pi">:</span>
+        <span class="c1"># Toggles NodeShell support. Allow K9s to shell into nodes if needed. Default false.</span>
+        <span class="na">nodeShell</span><span class="pi">:</span> <span class="no">false</span>
+      <span class="c1"># Provide shell pod customization of feature gate is enabled</span>
+      <span class="na">shellPod</span><span class="pi">:</span>
+        <span class="c1"># The shell pod image to use.</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">killerAdmin</span>
+        <span class="c1"># The namespace to launch to shell pod into.</span>
+        <span class="na">namespace</span><span class="pi">:</span> <span class="s">fred</span>
+        <span class="c1"># The resource limit to set on the shell pod.</span>
+        <span class="na">limits</span><span class="pi">:</span>
+          <span class="na">cpu</span><span class="pi">:</span> <span class="s">100m</span>
+          <span class="na">memory</span><span class="pi">:</span> <span class="s">100Mi</span>
+      <span class="c1"># The IP Address to use when launching a port-forward.</span>
+      <span class="na">portForwardAddress</span><span class="pi">:</span> <span class="s">1.2.3.4</span>
+    <span class="na">cluster2</span><span class="pi">:</span>
+      <span class="na">namespace</span><span class="pi">:</span>
+        <span class="na">active</span><span class="pi">:</span> <span class="s">all</span>
+        <span class="na">favorites</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">all</span>
+        <span class="pi">-</span> <span class="s">kube-system</span>
+        <span class="pi">-</span> <span class="s">default</span>
+      <span class="na">view</span><span class="pi">:</span>
+        <span class="na">active</span><span class="pi">:</span> <span class="s">dp</span>
+</code></pre></div></div>
+
+</div>
+
+<br />
+<div>
+  <a class="mid-align" href="/">
+    <i class="mid-align fas fa-2x fa-hand-point-left"></i>
+    &nbsp;<span class="mid-align">Back</span>
+  </a>
+</div>
+<br />
+<br />
+<hr />
+<img class="mid-align" src="/assets/imhotep_logo.png" width="32" height="auto" />
+<span class="mid-align">
+  © 2020 Imhotep Software LLC.
+  All materials licensed under <a class="mid-align" href="http://www.apache.org/licenses/LICENSE-2.0">Apache v2.0</a>
+</span>
+    </div>
+  </main>
+</body>
+
+</html>

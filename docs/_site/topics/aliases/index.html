@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang=" en ">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Aliases</title>
+  <meta name="description"
+    content="">
+
+  <link rel="stylesheet" href=" /css/main.css ">
+  <link rel="canonical" href="http://localhost:4000/topics/aliases/">
+  <link rel="alternate" type="application/rss+xml" title="K9sAlpha - Manage Your Kubernetes Clusters In Style" href="http://localhost:4000 /feed.xml
+    ">
+  <script src="https://kit.fontawesome.com/b45e86135f.js" crossorigin="anonymous"></script>
+</head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133652966-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-133652966-1');
+</script>
+
+<body>
+  <header class="site-header" role="banner">
+  <div class="logo">
+    <a class="site-logo" href="/">k9s𝞪</a>
+  </div>
+  <div class="cite">
+    Kubernetes CLI To Manage Your Clusters In Style!
+  </div>
+</header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      <div>
+  <p><a href="/"><img src="/assets/sections/dragon_1.png" align="right" width="200" height="auto" /></a></p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="aliases">Aliases</h1>
+
+<p><br /></p>
+
+<h2 id="-autosuggestions"><img src="/assets/sections/overview.png" width="auto" height="32" /> AutoSuggestions</h2>
+
+<p>K9s command mode supports autosuggestions. Suggestions are based on supported Kubernetes resource in singular/plural as well as short names and command aliases as describe below. The command mode supports the following keys:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>⬆️ ⬇️</td>
+      <td>Navigate up or down thru the suggestions</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">Ctrl-w</code>, <code class="highlighter-rouge">Ctrl-u</code></td>
+      <td>Clear out the command</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">Tab</code>, <code class="highlighter-rouge">Ctrl-f</code>, ➡️</td>
+      <td>Accept the suggestion</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h2 id="-aliases"><img src="/assets/sections/overview.png" width="auto" height="32" /> Aliases</h2>
+
+<p>In K9s, you can define your very own command aliases (short-names) to access your resources. In your <code class="highlighter-rouge">$HOME/.k9s</code> define a file called <code class="highlighter-rouge">alias.yml</code>. A K9s alias defines pairs of alias:gvr. A gvr (Group/Version/Resource) represents a fully qualified Kubernetes resource identifier. Here is an example of an alias file:</p>
+
+<p><br /></p>
+
+<h2 id="-example"><img src="/assets/sections/examples.png" width="auto" height="32" /> Example</h2>
+
+<p>Using this alias file, you can now type pp/crb to list pods or ClusterRoleBindings respectively.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.k9s/alias.yml</span>
+<span class="na">alias</span><span class="pi">:</span>
+  <span class="c1"># Use pp as an alias for Pod</span>
+  <span class="na">pp</span><span class="pi">:</span> <span class="s">v1/pods</span>
+
+  <span class="c1"># Use crb as an alias for ClusterRoleBinding</span>
+  <span class="na">crb</span><span class="pi">:</span> <span class="s">rbac.authorization.k8s.io/v1/clusterrolebindings</span>
+
+  <span class="c1"># Use cr as an alias for ClusterRole</span>
+  <span class="na">cr</span><span class="pi">:</span> <span class="s">rbac.authorization.k8s.io/v1/clusterroles</span>
+
+  <span class="c1"># Use dep as an alias for Deployments</span>
+  <span class="na">dep</span><span class="pi">:</span> <span class="s">apps/v1/deployments</span>
+
+  <span class="c1"># Use fred as an alias for CRD Frederick</span>
+  <span class="na">fred</span><span class="pi">:</span> <span class="s">acme.io/v1alpha1/fredericks</span>
+</code></pre></div></div>
+
+</div>
+
+<br />
+<div>
+  <a class="mid-align" href="/">
+    <i class="mid-align fas fa-2x fa-hand-point-left"></i>
+    &nbsp;<span class="mid-align">Back</span>
+  </a>
+</div>
+<br />
+<br />
+<hr />
+<img class="mid-align" src="/assets/imhotep_logo.png" width="32" height="auto" />
+<span class="mid-align">
+  © 2020 Imhotep Software LLC.
+  All materials licensed under <a class="mid-align" href="http://www.apache.org/licenses/LICENSE-2.0">Apache v2.0</a>
+</span>
+    </div>
+  </main>
+</body>
+
+</html>

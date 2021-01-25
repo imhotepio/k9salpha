@@ -1,0 +1,237 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Our variables
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #333;
+$background-color: 333;
+$brand-color:    blue;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    900px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+// Minima also includes a mixin for defining media queries.
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+
+// Import partials from the `minima` theme.
+@import "minima";
+
+.mid-align {
+  vertical-align: bottom;
+}
+
+i.icon {
+  float: right;
+}
+
+img.pic {
+  border-radius: 10px;
+  -webkit-filter: drop-shadow(8px 8px 10px #373831);
+  filter:drop-shadow(8px 8px 10px #373831);
+}
+
+.cite {
+  font-style: italic;
+  font-size: 2em;
+}
+.center {
+  text-align: center;
+}
+
+span.logo-text {
+  color: #2D54F4;
+  font-size: 5em;
+  font-weight: bolder;
+}
+
+.language-yaml {
+  margin-left: 30px;
+}
+
+.language-text {
+  margin-left: 30px;
+}
+
+.language-shell {
+  margin-left: 10px;
+}
+
+img.head {
+  text-align: right;
+  height: 128px;
+  width: auto
+}
+img.section {
+  width: auto;
+  height: 32px;
+}
+
+div.note {
+  color: orange;
+  border: 1px orange dashed;
+  text-align: center;
+  margin: 1px 1px 3px 1px;
+  padding: 5px 0px;
+  font-style: italic;
+}
+
+.highlighter-rouge .highlight {
+    background: whitesmoke;
+    color: lightcoral;
+}
+
+.highlight .s {
+  color: lightskyblue;
+}
+
+.highlight .nt {
+  color: #AF7;
+}
+
+.highlight .na {
+  color: lightskyblue;
+}
+
+pre, code {
+  background-color: whitesmoke;
+}
+code {
+    background: whitesmoke;
+    color: lightseagreen;
+}
+code.language-dockerfile {
+  background: whitesmoke;
+  color: #00AFDC;
+}
+
+ul.post-list li {
+    background: #fff;
+    border-top: 1px #3c3c3c solid;
+}
+
+.post-link {
+    font-size: 1.2em;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
+a {
+    color: #2390FF;
+}
+a:visited {
+  color: #2390FF;
+}
+a:hover {
+    color: rgb(76, 73, 255);
+}
+
+a.email {
+    color: #00AFDC;
+}
+a.email:hover{
+    color: $brand-color;
+}
+
+.site-footer {
+    text-align: center;
+}
+
+a.site-title {
+  color: white;
+  font-size: 2.5em;
+  margin-top: 10px;
+}
+
+i.sep {
+  color: $brand-color;
+}
+
+.logo-text {
+  font-size: 4em;
+}
+.logo-img {
+  height: 100px;
+  width: auto;
+  margin-right: 10px;
+}
+.logo {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+h1.post-title {
+ color: #A7C51F;
+}
+
+ul.contact-list li{
+    float: left;
+    margin-top: 20px;
+    padding-right: 30px;
+    color: red;
+}
+
+span.green {
+    color: #00AFDC;
+}
+
+div.logo {
+  font-size: 5em;
+  color:#333;
+  font-weight: bolder;
+}
+a.site-logo {
+  color: #333;
+}
+a.site-logo:visited {
+  color: #333;
+}
+a.site-logo:hover {
+  color: #2D54F4;
+}
+
+span.white {
+    color: #fff;
+}
+
+.site-header {
+    border: none;
+    padding: 0px 0px;
+    text-align: center;
+}
+
+.site-footer {
+    border: none;
+    background: #333;
+}
+
+body {
+    background: #fff;
+}
+
+.page-content {
+    background: #fff;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang=" en ">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Hotkeys</title>
+  <meta name="description"
+    content="">
+
+  <link rel="stylesheet" href=" /css/main.css ">
+  <link rel="canonical" href="http://localhost:4000/topics/hotkeys/">
+  <link rel="alternate" type="application/rss+xml" title="K9sAlpha - Manage Your Kubernetes Clusters In Style" href="http://localhost:4000 /feed.xml
+    ">
+  <script src="https://kit.fontawesome.com/b45e86135f.js" crossorigin="anonymous"></script>
+</head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133652966-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-133652966-1');
+</script>
+
+<body>
+  <header class="site-header" role="banner">
+  <div class="logo">
+    <a class="site-logo" href="/">k9s𝞪</a>
+  </div>
+  <div class="cite">
+    Kubernetes CLI To Manage Your Clusters In Style!
+  </div>
+</header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      <div>
+  <p><i class="icon fab fa-hotjar fa-7x"></i></p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="hotkeys">HotKeys</h1>
+
+<p><br /></p>
+
+<h2 id="-overview"><img src="/assets/sections/overview.png" width="auto" height="32" /> Overview</h2>
+
+<p>Entering the command mode and typing a resource name or alias could be cumbersome for navigating thru often visited resources. By leveraging <code class="highlighter-rouge">hotkeys</code>, K9s can be configured to quickly navigate to your favorite resources. In order to enable hotkeys please follow these steps:</p>
+
+<ol>
+  <li>Create a file named <code class="highlighter-rouge">$HOME/.k9s/hotkey.yml</code></li>
+  <li>Add the following to your <code class="highlighter-rouge">hotkey.yml</code>. You can use resource name/short name to specify a command ie same as typing it while in command mode.</li>
+</ol>
+
+<p>Not feeling so hot? Your custom hotkeys will be listed in the help view <code class="highlighter-rouge">?</code>. Also your hotkey file will be automatically reloaded so you can readily use your hotkeys as you define them.</p>
+
+<p>You can choose any keyboard shortcuts that make sense to you, provided they are not part of the standard K9s shortcuts list.</p>
+
+<p><br /></p>
+<div class="note">
+  <i class="fas fa-skull"></i> This configuration might change in future releases!
+</div>
+
+<p><br /></p>
+
+<h2 id="-example"><img src="/assets/sections/examples.png" width="auto" height="32" /> Example</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.k9s/hotkey.yml</span>
+<span class="na">hotKey</span><span class="pi">:</span>
+
+  <span class="c1"># Hitting Shift-0 navigates to your pod view</span>
+  <span class="na">shift-0</span><span class="pi">:</span>
+    <span class="na">shortCut</span><span class="pi">:</span>    <span class="s">Shift-0</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s">Viewing pods</span>
+    <span class="na">command</span><span class="pi">:</span>     <span class="s">pods</span>
+
+  <span class="c1"># Hitting Shift-1 navigates to your deployments</span>
+  <span class="na">shift-1</span><span class="pi">:</span>
+    <span class="na">shortCut</span><span class="pi">:</span>    <span class="s">Shift-1</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s">View deployments</span>
+    <span class="na">command</span><span class="pi">:</span>     <span class="s">dp</span>
+
+  <span class="c1"># Hitting Shift-2 navigates to your xray deployments</span>
+  <span class="na">shift-2</span><span class="pi">:</span>
+    <span class="na">shortCut</span><span class="pi">:</span>    <span class="s">Shift-2</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s">XRay Deployments</span>
+    <span class="na">command</span><span class="pi">:</span>     <span class="s">xray deploy</span>
+</code></pre></div></div>
+
+</div>
+
+<br />
+<div>
+  <a class="mid-align" href="/">
+    <i class="mid-align fas fa-2x fa-hand-point-left"></i>
+    &nbsp;<span class="mid-align">Back</span>
+  </a>
+</div>
+<br />
+<br />
+<hr />
+<img class="mid-align" src="/assets/imhotep_logo.png" width="32" height="auto" />
+<span class="mid-align">
+  © 2020 Imhotep Software LLC.
+  All materials licensed under <a class="mid-align" href="http://www.apache.org/licenses/LICENSE-2.0">Apache v2.0</a>
+</span>
+    </div>
+  </main>
+</body>
+
+</html>
