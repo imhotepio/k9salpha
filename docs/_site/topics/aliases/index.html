@@ -46,7 +46,7 @@
 
 <h1 id="aliases">Aliases</h1>
 
-<p>In K9s𝞪 you can define your very own command aliases (short-names) to access your resources. In your <code class="highlighter-rouge">$HOME/.k9s-alpha</code> define a file called <code class="highlighter-rouge">alias.yml</code>. A K9s𝞪 alias is defined via a pairs of the form alias-name:GVR. A GVR (Group/Version/Resource) represents a fully qualified Kubernetes resource identifier using the plural name form of a resource ie group/version/resource name.</p>
+<p>In K9s𝞪 you can define your very own command aliases (short-names) to access your favorite Kubernetes resources. Custom aliases reside in a file called <code class="language-plaintext highlighter-rouge">$HOME/.k9s-alpha/alias.yml</code>. A K9s𝞪 alias is defined via a pair alias-name:GVR. A GVR (Group/Version/Resource) represents a fully qualified Kubernetes resource identifier using the plural form of a resource name.</p>
 
 <p><br /></p>
 
@@ -76,8 +76,9 @@
 
 <h2 id="-autosuggest"><img src="/assets/sections/overview.png" width="auto" height="32" /> AutoSuggest</h2>
 
-<p><br />
-K9s𝞪 command mode supports autosuggestions. Suggestions are based on supported Kubernetes resource in singular/plural as well as short names and command aliases as describe below. The command mode supports the following keys:</p>
+<p><br /></p>
+
+<p>K9s𝞪 command mode supports autosuggestions. Suggestions are based on supported Kubernetes resource in singular/plural as well as short names and command aliases as describe below. The command mode supports the following keys:</p>
 
 <table>
   <thead>
@@ -92,11 +93,11 @@ K9s𝞪 command mode supports autosuggestions. Suggestions are based on supporte
       <td>Navigate up or down thru the suggestions</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">Ctrl-w</code>, <code class="highlighter-rouge">Ctrl-u</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Ctrl-w</code>, <code class="language-plaintext highlighter-rouge">Ctrl-u</code></td>
       <td>Clear out the command</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">Tab</code>, <code class="highlighter-rouge">Ctrl-f</code>, ➡️</td>
+      <td><code class="language-plaintext highlighter-rouge">Tab</code>, <code class="language-plaintext highlighter-rouge">Ctrl-f</code>, ➡️</td>
       <td>Accept the suggestion</td>
     </tr>
   </tbody>

@@ -10,7 +10,7 @@ layout: section
 
 # HotKeys
 
-Entering the command mode and typing a resource name or alias could be cumbersome for navigating thru often visited resources. By leveraging `hotkeys`, K9s𝞪 can be configured to quickly navigate to your favorite resources. In order to enable hotkeys create a file `$HOME/.k9s-alpha/hotkey.yml`
+Entering the command mode and typing a resource name or alias could be cumbersome for navigating quickly thru often visited resources. For this purpose, you can define `hotkeys` to quickly access your resources. HotKeys are defined in a file `$HOME/.k9s-alpha/hotkey.yml` using the syntax presented below.
 
 <br/>
 

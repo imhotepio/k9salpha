@@ -25,6 +25,19 @@ IMPORTANT! Alpha currently only support plain old k8s manifests or Kustomization
 
 NOTE! These queries are highly process/mem intensive and mileage will vary depending on the clusters size and resources complexity!
 
+
+<div class="center">
+  <img src="/assets/screens/wks.png" align="center" width="800" height="auto">
+  <br/>
+  K9s𝞪 Workloads View
+  <br/>
+  <img src="/assets/screens/wk.png" align="center" width="800" height="auto">
+  <br/>
+  K9s𝞪 Workloads View
+
+</div>
+
+
 <br/>
 <div class="note">
   <i class="fas fa-skull"></i> Work in progress... Options and layout may change in future K9s𝞪 releases as this feature solidifies.

@@ -14,18 +14,20 @@ layout: section
 
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
 
-K9s𝞪integrates [Hey](https://github.com/rakyll/hey) from the brilliant and super talented [Jaana Dogan](https://github.com/rakyll). `Hey` is a CLI tool to benchmark HTTP endpoints similar to AB bench. This preliminary feature currently supports benchmarking port-forwards and services (Read the paint on this is way fresh!).
+K9s𝞪 integrates [Hey](https://github.com/rakyll/hey) from the brilliant and super talented [Jaana Dogan](https://github.com/rakyll). `Hey` is a CLI tool to benchmark HTTP endpoints similar to AB bench. This preliminary feature currently supports benchmarking port-forwards and services (Read the paint on this is way fresh!).
 
-To setup a port-forward, you will need to navigate to the PodView, select a pod and a container that exposes a given port. Using `SHIFT-F` a dialog comes up to allow you to specify a local port to forward to. Once acknowledged, you can navigate to the PortForward view (alias `pf`) listing out your active port-forwards. Selecting a port-forward and using `CTRL-B` will run a benchmark on that HTTP endpoint. To view the results of your benchmark runs, go to the Benchmarks view (alias `be`). You should now be able to select a benchmark and view the run stats details by pressing `<ENTER>`. NOTE: Port-forwards only last for the duration of the K9s𝞪session and will be terminated upon exit.
+To setup a port-forward, you will need to navigate to the PodView, select a pod and a container that exposes a given port. Using `SHIFT-F` a dialog comes up to allow you to specify a local port to forward to. Once acknowledged, you can navigate to the PortForward view (alias `pf`) listing out your active port-forwards. Selecting a port-forward and using `b` will run a benchmark on that HTTP endpoint. To view the results of your benchmark runs, go to the Benchmarks view (alias `be`). You should now be able to select a benchmark and view the run stats details by pressing `<ENTER>`. NOTE: Port-forwards only last for the duration of the K9s𝞪 session and will be terminated upon exit.
 
-Initially, the benchmarks will run with the following defaults:
+All benchmarks will run with the following defaults:
 
 * Concurrency Level: 1
 * Number of Requests: 200
 * HTTP Verb: GET
 * Path: /
 
-The PortForward view is backed by a new K9s𝞪config file namely: `$HOME/.k9s/bench-<my_context>.yml`. Each cluster you connect to will have its own bench config file. Changes to this file should automatically update the PortForward view to indicate how you want to run your benchmarks.
+The PortForward view is backed by a K9s𝞪 `benchmarks.yml` file located relative to your Kubernetes context.
+For instance `$HOME/.k9s-alpha/contexts/contextA/benchmarks.yml` defines benchmark configurations on contextA.
+Each cluster you connect to will have its own bench config file. Changes to this file should automatically update the PortForward view to indicate how you want to run your benchmarks.
 
 <br/>
 <div class="note">
@@ -37,7 +39,7 @@ The PortForward view is backed by a new K9s𝞪config file namely: `$HOME/.k9s/b
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
 
 ```yaml
-# $HOME/.k9s/bench-<my_k8s_context>.yml
+# $HOME/.k9s-alpha/contexts/contextA/benchmarks.yml
 benchmarks:
   # Indicates the default concurrency and number of requests setting if a container or service rule does not match.
   defaults:

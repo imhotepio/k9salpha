@@ -46,20 +46,31 @@
 
 <h1 id="workloads">Workloads</h1>
 
-<p>You can now tell K9s to monitor your various workloads by defining a <code class="highlighter-rouge">workload.yml</code> file for a given Kubernetes context.
+<p>You can now tell K9s to monitor your various workloads by defining a <code class="language-plaintext highlighter-rouge">workload.yml</code> file for a given Kubernetes context.
 Given a set of labels, Alpha will monitor all ressources associated with those labels and present the results in a workloads view.
-You can access the view by using either <code class="highlighter-rouge">workloads</code> or the shortcut <code class="highlighter-rouge">wk</code>. This is the equivalent to using <code class="highlighter-rouge">kubectl get all -lapp=fred</code> with a twist as workloads will go deeper into your matching resources in good all k9s style!</p>
+You can access the view by using either <code class="language-plaintext highlighter-rouge">workloads</code> or the shortcut <code class="language-plaintext highlighter-rouge">wk</code>. This is the equivalent to using <code class="language-plaintext highlighter-rouge">kubectl get all -lapp=fred</code> with a twist as workloads will go deeper into your matching resources in good all k9s style!</p>
 
-<p>When a workload is specified, K9sAlpha will scan the associated resources and report any potential issues with their configuration. These are referred as resource <code class="highlighter-rouge">scans</code> in K9sAlpha parlance. The tool will classify scans as severe, warning or info and will give detailed reports on these scans and which resources are affected.
+<p>When a workload is specified, K9sAlpha will scan the associated resources and report any potential issues with their configuration. These are referred as resource <code class="language-plaintext highlighter-rouge">scans</code> in K9sAlpha parlance. The tool will classify scans as severe, warning or info and will give detailed reports on these scans and which resources are affected.
 Please refer to the scan section for additional information.</p>
 
 <p>IMPORTANT! The scans are not quiet on par with Popeye’s sanitizers! We will refine and beef-up in upcoming releases!</p>
 
-<p>Additionally, you have the option to tell k9s where the resources manifests are located on disk. In these situations, the tool will perform resource diffs and report the deltas between the <code class="highlighter-rouge">source of truth</code> aka the manifests on disk and what’s currently deployed on the cluster. When deltas are detected, K9sAlpha will produce detailed reports of the differences via <code class="highlighter-rouge">Deltas</code>.</p>
+<p>Additionally, you have the option to tell k9s where the resources manifests are located on disk. In these situations, the tool will perform resource diffs and report the deltas between the <code class="language-plaintext highlighter-rouge">source of truth</code> aka the manifests on disk and what’s currently deployed on the cluster. When deltas are detected, K9sAlpha will produce detailed reports of the differences via <code class="language-plaintext highlighter-rouge">Deltas</code>.</p>
 
 <p>IMPORTANT! Alpha currently only support plain old k8s manifests or Kustomizations to compute the deltas.</p>
 
 <p>NOTE! These queries are highly process/mem intensive and mileage will vary depending on the clusters size and resources complexity!</p>
+
+<div class="center">
+  <img src="/assets/screens/wks.png" align="center" width="800" height="auto" />
+  <br />
+  K9s𝞪 Workloads View
+  <br />
+  <img src="/assets/screens/wk.png" align="center" width="800" height="auto" />
+  <br />
+  K9s𝞪 Workloads View
+
+</div>
 
 <p><br /></p>
 <div class="note">

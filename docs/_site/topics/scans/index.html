@@ -46,7 +46,13 @@
 
 <h1 id="scans">Scans</h1>
 
-<p>New! In K9s𝞪 when workloads are detected, resources associated with the workload will be scans to report potential issues or anomalies. Although, we always recommend wide open scans to avoid potential hidden issues, one may want to exclude certain resources from the scans are they may not be either pertinent to the workload or may come from other subsystems. For example , you may have valid arguments for not specifying probes or not wanting to report on istio sidecars. For this reason, you can further qualify scans exclusions in a context specific file <code class="highlighter-rouge">$HOME/,k9salpha/contexts/contextA/scans.yml</code>.</p>
+<p>New! In K9s𝞪 when workloads are detected, resources associated with the workload will be scans to report potential issues or anomalies. Although, we always recommend wide open scans to avoid potential hidden issues, one may want to exclude certain resources from the scans are they may not be either pertinent to the workload or may come from other subsystems. For example , you may have valid arguments for not specifying probes or not wanting to report on istio sidecars. For this reason, you can further qualify scans exclusions in a context specific file <code class="language-plaintext highlighter-rouge">$HOME/,k9salpha/contexts/contextA/scans.yml</code>.</p>
+
+<div class="center">
+  <img src="/assets/screens/radars.png" align="center" width="800" height="auto" />
+  <br />
+  K9s𝞪 Radar View
+</div>
 
 <p><br /></p>
 <div class="note">
@@ -77,7 +83,7 @@
         <span class="na">fred</span><span class="pi">:</span>
         <span class="c1"># Exclude all namespaces matching the regular expression. ie kube-system, kube-public, kube-node-lease</span>
         <span class="c1"># NOTE! rx: here specifies a valid regular expression is given.</span>
-        <span class="s">rx:kube</span><span class="pi">:</span>
+        <span class="s">rx:kube:</span>
       <span class="c1"># Exclude certain pods from the scans.</span>
       <span class="s">v1/pods</span><span class="pi">:</span>
         <span class="c1"># Exclude StatefulSet pod nginx-sts-1 in the default namespace.</span>

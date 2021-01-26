@@ -46,16 +46,14 @@
 
 <h1 id="skins">Skins</h1>
 
-<h2 id="-overview"><img src="/assets/sections/overview.png" width="auto" height="32" /> Overview</h2>
+<p>You can style K9s𝞪 based on your own sense of look and style. Skins are YAML files, that enable a user to change the K9s𝞪 presentation layer. Skin files live in your <code class="language-plaintext highlighter-rouge">$HOME/.k9s-alpha</code> folder for your respective Kubernetes contexts. You can specify a general skin file <code class="language-plaintext highlighter-rouge">$HOME/.k9s-alpha/default-skins.yml</code> that applies to all your contexts. Alternatively, you can have context specific skins that are located in <code class="language-plaintext highlighter-rouge">$HOME/.k9s-alpha/contexts/contextXXX/skins.yml</code>. If a skin file exists for your cluster then the skin will be loaded if not the default skin remains in effect. So if you want to have K9s𝞪 looking different on a per cluster basis and say your context is named <code class="language-plaintext highlighter-rouge">fred</code> then your skins file name should be named <code class="language-plaintext highlighter-rouge">$HOME/.k9s-alpha/contexts/fred/skins.yml</code>. Below is a sample skin file, more skins are available in the <a href="https://github.com/imhotepio/k9salpha/tree/master/skins">skins</a> directory in the k9salpha repo.</p>
 
-<p>You can style K9s𝞪based on your own sense of look and style. Skins are YAML files, that enable a user to change the K9s𝞪presentation layer. Skin files live in your <code class="highlighter-rouge">$HOME/.k9s</code> folder. You can specify a general skin file <code class="highlighter-rouge">skin.yml</code> that applies to all your clusters or cluster specific skins that are named after the cluster you are connecting to. If a skin file exists for your cluster then the skin will be loaded if not the stock skin remains in effect. So if your want different K9s𝞪look and feel on a per cluster basis and say your cluster is named <code class="highlighter-rouge">fred</code> then your skin file name should be named <code class="highlighter-rouge">$HOME/.k9s/fred_skin.yml</code>. Below is a sample skin file, more skins are available in the <a href="https://github.com/derailed/k9s/tree/master/skins">skins</a> directory in the K9s𝞪repo.</p>
-
-<p>Colors can be defined as named colors (see table below) or using an hex representation. To preserve your terminal session background color, we’ve added a color named <code class="highlighter-rouge">default</code> to indicate a transparent background color if so desired.</p>
+<p>Colors can be defined as named colors (see table below) or using an hex representation. To preserve your terminal session background color, we’ve added a color named <code class="language-plaintext highlighter-rouge">default</code> to indicate a transparent background color if so desired.</p>
 
 <div class="center">
-  <img src="/assets/skins/dracula.png" align="center" width="600" height="auto" />
+  <img src="/assets/skins/dracula.png" align="center" width="800" height="auto" />
   <br />
-  K9s𝞪Dracula skin
+  K9s𝞪 Dracula skin
 </div>
 
 <p><br /></p>
@@ -67,9 +65,9 @@
 
 <h2 id="-skin-example"><img src="/assets/sections/examples.png" class="section" /> Skin Example</h2>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.k9s/in_the_navy_skin.yml</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.k9s-alpha/contexts/fred/skins.yml</span>
 <span class="na">k9s</span><span class="pi">:</span>
-  <span class="c1"># General K9s𝞪styles</span>
+  <span class="c1"># General K9s𝞪 styles</span>
   <span class="na">body</span><span class="pi">:</span>
     <span class="na">fgColor</span><span class="pi">:</span> <span class="s">dodgerblue</span>
     <span class="na">bgColor</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#ffffff'</span>
@@ -117,6 +115,7 @@
       <span class="na">highlightColor</span><span class="pi">:</span> <span class="s">skyblue</span>
       <span class="na">counterColor</span><span class="pi">:</span> <span class="s">slateblue</span>
       <span class="na">filterColor</span><span class="pi">:</span> <span class="s">slategray</span>
+
   <span class="c1"># Specific views styles</span>
   <span class="na">views</span><span class="pi">:</span>
     <span class="c1"># TableView attributes.</span>

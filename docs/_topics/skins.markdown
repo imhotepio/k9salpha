@@ -10,16 +10,14 @@ layout: section
 
 # Skins
 
-## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
-
-You can style K9s𝞪based on your own sense of look and style. Skins are YAML files, that enable a user to change the K9s𝞪presentation layer. Skin files live in your `$HOME/.k9s` folder. You can specify a general skin file `skin.yml` that applies to all your clusters or cluster specific skins that are named after the cluster you are connecting to. If a skin file exists for your cluster then the skin will be loaded if not the stock skin remains in effect. So if your want different K9s𝞪look and feel on a per cluster basis and say your cluster is named `fred` then your skin file name should be named `$HOME/.k9s/fred_skin.yml`. Below is a sample skin file, more skins are available in the [skins](https://github.com/derailed/k9s/tree/master/skins) directory in the K9s𝞪repo.
+You can style K9s𝞪 based on your own sense of look and style. Skins are YAML files, that enable a user to change the K9s𝞪 presentation layer. Skin files live in your `$HOME/.k9s-alpha` folder for your respective Kubernetes contexts. You can specify a general skin file `$HOME/.k9s-alpha/default-skins.yml` that applies to all your contexts. Alternatively, you can have context specific skins that are located in `$HOME/.k9s-alpha/contexts/contextXXX/skins.yml`. If a skin file exists for your cluster then the skin will be loaded if not the default skin remains in effect. So if you want to have K9s𝞪 looking different on a per cluster basis and say your context is named `fred` then your skins file name should be named `$HOME/.k9s-alpha/contexts/fred/skins.yml`. Below is a sample skin file, more skins are available in the [skins](https://github.com/imhotepio/k9salpha/tree/master/skins) directory in the k9salpha repo.
 
 Colors can be defined as named colors (see table below) or using an hex representation. To preserve your terminal session background color, we've added a color named `default` to indicate a transparent background color if so desired.
 
 <div class="center">
-  <img src="/assets/skins/dracula.png" align="center" width="600" height="auto">
+  <img src="/assets/skins/dracula.png" align="center" width="800" height="auto">
   <br/>
-  K9s𝞪Dracula skin
+  K9s𝞪 Dracula skin
 </div>
 
 <br/>
@@ -32,9 +30,9 @@ Colors can be defined as named colors (see table below) or using an hex represen
 ## <img src="/assets/sections/examples.png" class="section"/> Skin Example
 
 ```yaml
-# $HOME/.k9s/in_the_navy_skin.yml
+# $HOME/.k9s-alpha/contexts/fred/skins.yml
 k9s:
-  # General K9s𝞪styles
+  # General K9s𝞪 styles
   body:
     fgColor: dodgerblue
     bgColor: '#ffffff'
@@ -82,6 +80,7 @@ k9s:
       highlightColor: skyblue
       counterColor: slateblue
       filterColor: slategray
+
   # Specific views styles
   views:
     # TableView attributes.

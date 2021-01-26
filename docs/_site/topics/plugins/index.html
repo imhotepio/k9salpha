@@ -46,14 +46,14 @@
 
 <h1 id="plugins">Plugins</h1>
 
-<p>K9s𝞪 allows you to extend your command line and tooling by defining your very own cluster commands via plugins. Plugins are defined a file named <code class="highlighter-rouge">$HOME/.k9s-alpha/plugin.yml</code>.</p>
+<p>K9s𝞪 allows you to extend your command line and tooling by defining your very own cluster commands via plugins. Plugins are defined a file named <code class="language-plaintext highlighter-rouge">$HOME/.k9s-alpha/plugin.yml</code>.</p>
 
 <p>A plugin is defined as follows:</p>
 
 <ul>
   <li>Shortcut option represents the key combination a user would type to activate the plugin</li>
   <li>Description will be printed next to the shortcut in the K9s𝞪menu</li>
-  <li>Scopes defines a collection of resources name/short-name for the views associated with the plugin. You can specify <code class="highlighter-rouge">all</code> to provide this shortcut for all views.</li>
+  <li>Scopes defines a collection of resources name/short-name for the views associated with the plugin. You can specify <code class="language-plaintext highlighter-rouge">all</code> to provide this shortcut for all views.</li>
   <li>Command represents ad-hoc commands the plugin runs upon activation</li>
   <li>Background specifies whether or not the command runs in the background</li>
   <li>Args specifies the various arguments that should apply to the command above</li>
@@ -62,20 +62,20 @@
 <p>K9s𝞪 does provide additional environment variables for you to customize your plugins arguments. Currently, the available environment variables are as follows:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">$NAMESPACE</code> – the selected resource namespace</li>
-  <li><code class="highlighter-rouge">$NAME</code> – the selected resource name</li>
-  <li><code class="highlighter-rouge">$CONTAINER</code> – the current container if applicable</li>
-  <li><code class="highlighter-rouge">$FILTER</code> – the current filter if any</li>
-  <li><code class="highlighter-rouge">$KUBECONFIG</code> – the KubeConfig location.</li>
-  <li><code class="highlighter-rouge">$CLUSTER</code> the active cluster name</li>
-  <li><code class="highlighter-rouge">$CONTEXT</code> the active context name</li>
-  <li><code class="highlighter-rouge">$USER</code> the active user</li>
-  <li><code class="highlighter-rouge">$GROUPS</code> the active groups</li>
-  <li><code class="highlighter-rouge">$POD</code> while in a container view</li>
-  <li><code class="highlighter-rouge">$COL-&lt;RESOURCE_COLUMN_NAME&gt;</code> use a given column name for a viewed resource. Must be prefixed by <code class="highlighter-rouge">COL-</code>!</li>
+  <li><code class="language-plaintext highlighter-rouge">$NAMESPACE</code> – the selected resource namespace</li>
+  <li><code class="language-plaintext highlighter-rouge">$NAME</code> – the selected resource name</li>
+  <li><code class="language-plaintext highlighter-rouge">$CONTAINER</code> – the current container if applicable</li>
+  <li><code class="language-plaintext highlighter-rouge">$FILTER</code> – the current filter if any</li>
+  <li><code class="language-plaintext highlighter-rouge">$KUBECONFIG</code> – the KubeConfig location.</li>
+  <li><code class="language-plaintext highlighter-rouge">$CLUSTER</code> the active cluster name</li>
+  <li><code class="language-plaintext highlighter-rouge">$CONTEXT</code> the active context name</li>
+  <li><code class="language-plaintext highlighter-rouge">$USER</code> the active user</li>
+  <li><code class="language-plaintext highlighter-rouge">$GROUPS</code> the active groups</li>
+  <li><code class="language-plaintext highlighter-rouge">$POD</code> while in a container view</li>
+  <li><code class="language-plaintext highlighter-rouge">$COL-&lt;RESOURCE_COLUMN_NAME&gt;</code> use a given column name for a viewed resource. Must be prefixed by <code class="language-plaintext highlighter-rouge">COL-</code>!</li>
 </ul>
 
-<p>NOTE: Take a look at some of the <a href="https://github.com/imhotepio/k9salpha/plugins">Community Custom Plugins</a> contributed by your K9sers friends.</p>
+<p>For inspiration, please take a look at some of the <a href="https://github.com/imhotepio/k9salpha/tree/master/plugins">K9s𝞪 Community Plugins</a> contributed by our K9sers friends.</p>
 
 <p><br /></p>
 <div class="note">
@@ -86,7 +86,7 @@
 
 <h2 id="-example"><img src="/assets/sections/examples.png" width="auto" height="32" /> Example</h2>
 
-<p>This defines a plugin for viewing logs on a selected pod using <code class="highlighter-rouge">ctrl-l</code> mnemonic.</p>
+<p>This defines a plugin for viewing logs on a selected pod using <code class="language-plaintext highlighter-rouge">ctrl-l</code> mnemonic.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.k9s-alpha/plugin.yml</span>
 <span class="na">plugin</span><span class="pi">:</span>

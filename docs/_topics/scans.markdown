@@ -12,6 +12,12 @@ layout: section
 
 New! In K9s𝞪 when workloads are detected, resources associated with the workload will be scans to report potential issues or anomalies. Although, we always recommend wide open scans to avoid potential hidden issues, one may want to exclude certain resources from the scans are they may not be either pertinent to the workload or may come from other subsystems. For example , you may have valid arguments for not specifying probes or not wanting to report on istio sidecars. For this reason, you can further qualify scans exclusions in a context specific file `$HOME/,k9salpha/contexts/contextA/scans.yml`.
 
+<div class="center">
+  <img src="/assets/screens/radars.png" align="center" width="800" height="auto">
+  <br/>
+  K9s𝞪 Radar View
+</div>
+
 <br/>
 <div class="note">
   <i class="fas fa-skull"></i> Work in progress... Options and layout may change in future K9s𝞪 releases as this feature solidifies.

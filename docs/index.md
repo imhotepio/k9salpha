@@ -86,28 +86,6 @@ You can download the binaries from our [release page](https://github.com/imhotep
 - [Plugins]({{ "/topics/plugins" }})
 - [Resource Columns]({{ "/topics/columns" }})
 - [RBAC]({{ "/topics/rbac" }})
-- [Tutorials]({{ "/topics/video" }})
-
-<br/>
-
-## <i class="fab fa-youtube"/> Previews
-
-[![asciicast](https://asciinema.org/a/305944.svg)](https://asciinema.org/a/305944)
-
-- Pulses - *A top level dashboard of the state of affairs of your cluster*
-  <img src="assets/screens/pulses.png"/>
-- XRay - *Dig in your cluster resources and view their dependencies*
-  <img src="assets/screens/xray.png"/>
-- Pods - *List out your pods status and resource consumption*
-  <img src="assets/screens/pods.png"/>
-- Logs - *View and interact with your container logs*
-  <img src="assets/screens/logs.png"/>
-- RBAC - *View the who/what/how of authorizations on your cluster*
-  <img src="assets/screens/rbac.png"/>
-- Workloads - *Define and monitor various workloads on your cluster*
-  <img src="assets/screens/wks.png"/>
-- Workload - *View a specific workload related resource list and scans*
-  <img src="assets/screens/wk.png"/>
 
 <br/>
 

@@ -10,7 +10,7 @@ layout: section
 
 # Aliases
 
-In K9s𝞪 you can define your very own command aliases (short-names) to access your resources. In your `$HOME/.k9s-alpha` define a file called `alias.yml`. A K9s𝞪 alias is defined via a pairs of the form alias-name:GVR. A GVR (Group/Version/Resource) represents a fully qualified Kubernetes resource identifier using the plural name form of a resource ie group/version/resource name.
+In K9s𝞪 you can define your very own command aliases (short-names) to access your favorite Kubernetes resources. Custom aliases reside in a file called `$HOME/.k9s-alpha/alias.yml`. A K9s𝞪 alias is defined via a pair alias-name:GVR. A GVR (Group/Version/Resource) represents a fully qualified Kubernetes resource identifier using the plural form of a resource name.
 
 <br/>
 
@@ -42,6 +42,7 @@ alias:
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> AutoSuggest
 
 <br/>
+
 K9s𝞪 command mode supports autosuggestions. Suggestions are based on supported Kubernetes resource in singular/plural as well as short names and command aliases as describe below. The command mode supports the following keys:
 
 | Key                | Description                              |

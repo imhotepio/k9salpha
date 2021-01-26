@@ -35,7 +35,7 @@ K9s𝞪 does provide additional environment variables for you to customize your 
 * `$POD` while in a container view
 * `$COL-<RESOURCE_COLUMN_NAME>` use a given column name for a viewed resource. Must be prefixed by `COL-`!
 
-NOTE: Take a look at some of the [Community Custom Plugins](https://github.com/imhotepio/k9salpha/plugins) contributed by your K9sers friends.
+For inspiration, please take a look at some of the [K9s𝞪 Community Plugins](https://github.com/imhotepio/k9salpha/tree/master/plugins) contributed by our K9sers friends.
 
 <br/>
 <div class="note">
