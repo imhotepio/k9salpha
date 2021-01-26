@@ -48,10 +48,10 @@
 
 <p><br /></p>
 
-<h2 id="-overview"><img src="/assets/sections/overview.png" width="auto" height="32" /> Overview</h2>
+<h2 id="-application-configuration"><img src="/assets/sections/overview.png" width="auto" height="32" /> Application Configuration</h2>
 
-<p>K9s keeps its configurations in a .k9s directory in your home directory <code class="highlighter-rouge">$HOME/.k9s</code>. The main configuration file is named <code class="highlighter-rouge">config.yml</code> and stores various K9s specific bits. This file
-will be updated by k9s to store current view and namespaces information.</p>
+<p>K9s𝞪 keeps its configurations in your home directory dotfile under <code class="highlighter-rouge">$HOME/.k9s-alpha</code>.
+The main configuration file is named <code class="highlighter-rouge">config.yml</code> and stores various K9s𝞪 specific bits.</p>
 
 <p><br /></p>
 <div class="note">
@@ -60,79 +60,198 @@ will be updated by k9s to store current view and namespaces information.</p>
 
 <p><br /></p>
 
-<h2 id="-k9s-cli-configuration"><img src="/assets/sections/examples.png" width="auto" height="32" /> K9s CLI Configuration</h2>
+<h2 id="-main-configuration"><img src="/assets/sections/examples.png" width="auto" height="32" /> Main Configuration</h2>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.k9s/config.yml</span>
+<p>There is a departure here from the original K9s. Context specific configurations now resides in a new directory location aka <code class="highlighter-rouge">contexts</code>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.k9s-alpha/config.yml</span>
 <span class="na">k9s</span><span class="pi">:</span>
-  <span class="c1"># Represents ui poll intervals. Default 2secs</span>
+  <span class="c1"># Sets the refreshRate for updating cluster resources.</span>
   <span class="na">refreshRate</span><span class="pi">:</span> <span class="s">2</span>
-  <span class="c1"># Number of retries once the connection to the api-server is lost. Default 15.</span>
+  <span class="c1"># NEW! Sets the default dump directory when saving resources.</span>
+  <span class="na">dumpDir</span><span class="pi">:</span> <span class="s">/tmp/k9s</span>
+  <span class="c1"># NEW! Sets the maximum number of retries when connecting to k8s api server.</span>
   <span class="na">maxConnRetry</span><span class="pi">:</span> <span class="s">5</span>
-  <span class="c1"># Enable mouse support. Default false</span>
-  <span class="na">enableMouse</span><span class="pi">:</span> <span class="no">true</span>
-  <span class="c1"># Set to true to hide K9s header. Default false</span>
+  <span class="c1"># Toggles mouse events</span>
+  <span class="na">enableMouse</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="c1"># Toggles header display.</span>
   <span class="na">headless</span><span class="pi">:</span> <span class="no">false</span>
-  <span class="c1"># Set to true to hide K9s crumbs. Default false</span>
+  <span class="c1"># Toggles crumbs.</span>
   <span class="na">crumbsless</span><span class="pi">:</span> <span class="no">false</span>
-  <span class="c1"># Indicates whether modification commands like delete/kill/edit are disabled. Default is false</span>
+  <span class="c1"># Sets whether or not K9s𝞪should be able to alter cluster resources.</span>
   <span class="na">readOnly</span><span class="pi">:</span> <span class="no">false</span>
-  <span class="c1"># Toggles icons display as not all terminal support these chars.</span>
+  <span class="c1"># Toggles terminal icons.</span>
   <span class="na">noIcons</span><span class="pi">:</span> <span class="no">false</span>
-
-  <span class="c1"># Logs configuration</span>
+  <span class="c1"># Define logger configuration.</span>
   <span class="na">logger</span><span class="pi">:</span>
-    <span class="c1"># Defines the number of lines to return. Default 100</span>
-    <span class="na">tail</span><span class="pi">:</span> <span class="s">200</span>
-    <span class="c1"># Defines the total number of log lines to allow in the view. Default 1000</span>
-    <span class="na">buffer</span><span class="pi">:</span> <span class="s">500</span>
-    <span class="c1"># Represents how far to go back in the log timeline in seconds. Setting to -1 will show all available logs. Default is 5mins.</span>
-    <span class="na">sinceSeconds</span><span class="pi">:</span> <span class="s">300</span>
-    <span class="c1"># Go full screen while displaying logs. Default false</span>
+    <span class="c1"># Tails the last xxx lines from the logs. Defaults 100.</span>
+    <span class="na">tail</span><span class="pi">:</span> <span class="s">100</span>
+    <span class="c1"># Sets the max number of lines to display while in log view. Defaults 5k.</span>
+    <span class="na">buffer</span><span class="pi">:</span> <span class="s">5000</span>
+    <span class="c1"># Set the timeline to retrieve the logs in seconds. Defaults 60secs.</span>
+    <span class="na">sinceSeconds</span><span class="pi">:</span> <span class="s">60</span>
+    <span class="c1"># Toggles log full screen display. Defaults false.</span>
     <span class="na">fullScreenLogs</span><span class="pi">:</span> <span class="no">false</span>
-    <span class="c1"># Toggles log line wrap. Default false</span>
+    <span class="c1"># Toggles log text wrap. Defaults false.</span>
     <span class="na">textWrap</span><span class="pi">:</span> <span class="no">false</span>
-    <span class="c1"># Toggles log line timestamp info. Default false</span>
+    <span class="c1"># Toggles show log time stamps. Default false.</span>
     <span class="na">showTime</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="c1"># Sets thresholds for over cpu/memory alerts</span>
+  <span class="na">thresholds</span><span class="pi">:</span>
+    <span class="c1"># Sets cpu max thresholds. K9s𝞪will display an alert when these thresholds are exceeded.</span>
+    <span class="na">cpu</span><span class="pi">:</span>
+      <span class="na">critical</span><span class="pi">:</span> <span class="s">90</span>
+      <span class="na">warn</span><span class="pi">:</span> <span class="s">70</span>
+    <span class="c1"># Sets mem max thresholds. K9s𝞪will display an alert when these thresholds are exceeded.</span>
+    <span class="na">memory</span><span class="pi">:</span>
+      <span class="na">critical</span><span class="pi">:</span> <span class="s">90</span>
+      <span class="na">warn</span><span class="pi">:</span> <span class="s">70</span>
+</code></pre></div></div>
 
-  <span class="c1"># Indicates the current Kube context. Defaults to current context</span>
-  <span class="na">currentContext</span><span class="pi">:</span> <span class="s">minikube</span>
-  <span class="c1"># Indicates the current kube cluster. Defaults to current context cluster</span>
-  <span class="na">currentCluster</span><span class="pi">:</span> <span class="s">minikube</span>
-  <span class="c1"># Persists per cluster preferences for favorite namespaces and view.</span>
+<p><br /></p>
 
-  <span class="na">clusters</span><span class="pi">:</span>
-    <span class="na">cluster1</span><span class="pi">:</span>
-      <span class="na">namespace</span><span class="pi">:</span>
-        <span class="na">active</span><span class="pi">:</span> <span class="s">coolio</span>
-        <span class="na">favorites</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">cassandra</span>
-        <span class="pi">-</span> <span class="s">default</span>
-      <span class="na">view</span><span class="pi">:</span>
-        <span class="na">active</span><span class="pi">:</span> <span class="s">po</span>
-      <span class="na">featureGates</span><span class="pi">:</span>
-        <span class="c1"># Toggles NodeShell support. Allow K9s to shell into nodes if needed. Default false.</span>
-        <span class="na">nodeShell</span><span class="pi">:</span> <span class="no">false</span>
-      <span class="c1"># Provide shell pod customization of feature gate is enabled</span>
-      <span class="na">shellPod</span><span class="pi">:</span>
-        <span class="c1"># The shell pod image to use.</span>
-        <span class="na">image</span><span class="pi">:</span> <span class="s">killerAdmin</span>
-        <span class="c1"># The namespace to launch to shell pod into.</span>
-        <span class="na">namespace</span><span class="pi">:</span> <span class="s">fred</span>
-        <span class="c1"># The resource limit to set on the shell pod.</span>
-        <span class="na">limits</span><span class="pi">:</span>
-          <span class="na">cpu</span><span class="pi">:</span> <span class="s">100m</span>
-          <span class="na">memory</span><span class="pi">:</span> <span class="s">100Mi</span>
-      <span class="c1"># The IP Address to use when launching a port-forward.</span>
-      <span class="na">portForwardAddress</span><span class="pi">:</span> <span class="s">1.2.3.4</span>
-    <span class="na">cluster2</span><span class="pi">:</span>
-      <span class="na">namespace</span><span class="pi">:</span>
-        <span class="na">active</span><span class="pi">:</span> <span class="s">all</span>
-        <span class="na">favorites</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">all</span>
-        <span class="pi">-</span> <span class="s">kube-system</span>
-        <span class="pi">-</span> <span class="s">default</span>
-      <span class="na">view</span><span class="pi">:</span>
-        <span class="na">active</span><span class="pi">:</span> <span class="s">dp</span>
+<h2 id="-kubernetes-contexts-configuration"><img src="/assets/sections/overview.png" width="auto" height="32" /> Kubernetes Contexts Configuration</h2>
+
+<p>K9s𝞪 keeps available Kubernetes contexts configurations under <code class="highlighter-rouge">$HOME/.k9s-alpha/contexts</code>. Each Kubernetes contexts have multiple configurations that can further refine the tool. Things like feature gates, skins, scans, workloads and benchmarking options are all configurations set at the context level.</p>
+
+<p>For a given Kubernetes context, K9s𝞪 expects the following directory organization and structure under <code class="highlighter-rouge">$HOME/.k9s-alpha</code>:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>contexts
+  contextA
+    benchmarks.yml
+    config.yml
+    scans.yml
+    skins.yml
+    workloads.yml
+  contextB
+    benchmarks.yml
+    config.yml
+    scans.yml
+    skins.yml
+    workloads.yml
+</code></pre></div></div>
+
+<p>If these files do not exist on disk, K9s𝞪 will take a default stance for each separate configurations where applicable.
+For more details about each of these configurations, please see their individual specification in the help section.</p>
+
+<p><br /></p>
+<div class="note">
+  <i class="fas fa-skull"></i> This is still in flux and will change while in pre-release stage!
+</div>
+
+<p><br /></p>
+
+<h2 id="-sample-cluster-config"><img src="/assets/sections/examples.png" width="auto" height="32" /> Sample Cluster Config</h2>
+
+<p>Define a specific cluster configuration in the given context.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.k9s-alpha/contexts/contextA/config.yml</span>
+<span class="na">k9s</span><span class="pi">:</span>
+  <span class="na">cluster</span><span class="pi">:</span>
+    <span class="na">featureGates</span><span class="pi">:</span>
+      <span class="na">nodeShell</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">shellPod</span><span class="pi">:</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s">busybox:1.31</span>
+      <span class="na">namespace</span><span class="pi">:</span> <span class="s">default</span>
+      <span class="na">limits</span><span class="pi">:</span>
+        <span class="na">cpu</span><span class="pi">:</span> <span class="s">100m</span>
+        <span class="na">memory</span><span class="pi">:</span> <span class="s">100Mi</span>
+    <span class="na">portForwardAddress</span><span class="pi">:</span> <span class="s">localhost</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="-sample-benchmark-config"><img src="/assets/sections/examples.png" width="auto" height="32" /> Sample Benchmark Config</h2>
+
+<p>Specifies <code class="highlighter-rouge">hey</code> benchmarking configuration for pods and services.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.k9s-alpha/contexts/contextA/benchmarks.yml</span>
+<span class="na">benchmarks</span><span class="pi">:</span>
+  <span class="na">defaults</span><span class="pi">:</span>
+    <span class="na">concurrency</span><span class="pi">:</span> <span class="s">2</span>
+    <span class="na">requests</span><span class="pi">:</span> <span class="s">500</span>
+  <span class="na">containers</span><span class="pi">:</span>
+    <span class="s">default/nginx:nginx</span><span class="pi">:</span>
+      <span class="na">concurrency</span><span class="pi">:</span> <span class="s">2</span>
+      <span class="na">requests</span><span class="pi">:</span> <span class="s">2000</span>
+      <span class="na">http</span><span class="pi">:</span>
+        <span class="na">method</span><span class="pi">:</span> <span class="s">GET</span>
+        <span class="na">path</span><span class="pi">:</span> <span class="s">/</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="-sample-scans-config"><img src="/assets/sections/examples.png" width="auto" height="32" /> Sample Scans Config</h2>
+
+<p>Specifies which particular resources and codes should be excluded from the cluster scans.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.k9s-alpha/contexts/contextA/scans.yml</span>
+<span class="na">k9s</span><span class="pi">:</span>
+  <span class="na">bans</span><span class="pi">:</span>
+    <span class="na">globals</span><span class="pi">:</span>
+      <span class="na">sidecars</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">istio-proxy</span>
+      <span class="na">codes</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">CON-04</span>
+    <span class="na">gvrs</span><span class="pi">:</span>
+      <span class="s">v1/namespaces</span><span class="pi">:</span>
+        <span class="s">rx:kube</span><span class="pi">:</span>
+      <span class="s">v1/pods</span><span class="pi">:</span>
+        <span class="s">default/nginx-sts-0</span><span class="pi">:</span>
+          <span class="na">codes</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">CON-03</span>
+            <span class="pi">-</span> <span class="s">CON-06</span>
+      <span class="s">v1/secrets</span><span class="pi">:</span>
+        <span class="s">default/sc1</span><span class="pi">:</span>
+        <span class="s">default/sc2</span><span class="pi">:</span>
+      <span class="s">v1/services</span><span class="pi">:</span>
+        <span class="s">default/nginx</span><span class="pi">:</span>
+          <span class="na">codes</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">SVC-04</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="-sample-skins-config"><img src="/assets/sections/examples.png" width="auto" height="32" /> Sample Skins Config</h2>
+
+<p>Defines a specific skin configuration for a given context for your eye balls delight. Additionaly, this can provide an extra visual cues while managing multiple contexts.
+Please see the skins directory in this  repo for template ideas.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.k9s-alpha/contexts/contextA/skins.yml</span>
+<span class="na">k9s</span><span class="pi">:</span>
+  <span class="c1"># General K9s𝞪styles</span>
+  <span class="na">body</span><span class="pi">:</span>
+    <span class="na">fgColor</span><span class="pi">:</span> <span class="nv">*foreground</span>
+    <span class="na">bgColor</span><span class="pi">:</span> <span class="nv">*background</span>
+    <span class="na">logoColor</span><span class="pi">:</span> <span class="nv">*magenta</span>
+  <span class="c1"># ClusterInfoView styles.</span>
+  <span class="na">info</span><span class="pi">:</span>
+    <span class="na">fgColor</span><span class="pi">:</span> <span class="nv">*pink</span>
+    <span class="na">sectionColor</span><span class="pi">:</span> <span class="nv">*foreground</span>
+  <span class="s">...</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="-sample-workloads-config"><img src="/assets/sections/examples.png" width="auto" height="32" /> Sample Workloads Config</h2>
+
+<p>Workloads provide for categorizing related cluster resources by using labels to query cluster resources.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.k9s-alpha/contexts/contextA/workloads.yml</span>
+<span class="na">workloads</span><span class="pi">:</span>
+  <span class="na">nginx</span><span class="pi">:</span>
+    <span class="na">labels</span><span class="pi">:</span>
+      <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>
+      <span class="na">env</span><span class="pi">:</span> <span class="s">prod</span>
+      <span class="na">fred</span><span class="pi">:</span> <span class="s">blee</span>
+    <span class="na">manifests</span><span class="pi">:</span> <span class="s">/Users/fernand/work/myprojects/K9sAlpha/k9s/k8s/nginx-dir/nginx.yml</span>
+  <span class="na">sts</span><span class="pi">:</span>
+    <span class="na">labels</span><span class="pi">:</span>
+      <span class="na">app</span><span class="pi">:</span> <span class="s">nginx-sts</span>
+    <span class="na">manifests</span><span class="pi">:</span> <span class="s">/Users/fernand/work/myprojects/K9sAlpha/k9s/k8s/nginx-sts-dir</span>
+  <span class="na">zoro</span><span class="pi">:</span>
+    <span class="na">labels</span><span class="pi">:</span>
+      <span class="na">app</span><span class="pi">:</span> <span class="s">bumble-bee-tuna</span>
 </code></pre></div></div>
 
 </div>
@@ -149,7 +268,7 @@ will be updated by k9s to store current view and namespaces information.</p>
 <hr />
 <img class="mid-align" src="/assets/imhotep_logo.png" width="32" height="auto" />
 <span class="mid-align">
-  © 2020 Imhotep Software LLC.
+  © 2021 Imhotep Software LLC.
   All materials licensed under <a class="mid-align" href="http://www.apache.org/licenses/LICENSE-2.0">Apache v2.0</a>
 </span>
     </div>

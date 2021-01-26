@@ -50,13 +50,13 @@
 
 <h2 id="-overview"><img src="/assets/sections/overview.png" width="auto" height="32" /> Overview</h2>
 
-<p>On RBAC enabled clusters, you would need to give your users/groups capabilities so that they can use K9s to explore their Kubernetes cluster. K9s needs minimally read privileges at both the cluster and namespace level to display resources and metrics.</p>
+<p>On RBAC enabled clusters, you would need to give your users/groups capabilities so that they can use K9s𝞪to explore their Kubernetes cluster. K9s𝞪needs minimally read privileges at both the cluster and namespace level to display resources and metrics.</p>
 
 <p>These rules below are just suggestions. You will need to customize them based on your environment policies. If you need to edit/delete resources extra Fu will be necessary.</p>
 
 <p><br /></p>
 <div class="note">
-  <i class="fas fa-skull"></i> Cluster/Namespace access may change in the future as K9s evolves.
+  <i class="fas fa-skull"></i> Cluster/Namespace access may change in the future as K9s𝞪evolves.
 </div>
 
 <p><br /></p>
@@ -64,7 +64,7 @@
 <h2 id="-clusterrole"><img src="/assets/sections/examples.png" width="auto" height="32" /> ClusterRole</h2>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="c1"># K9s Reader ClusterRole</span>
+<span class="c1"># K9s𝞪Reader ClusterRole</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">ClusterRole</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">rbac.authorization.k8s.io/v1</span>
 <span class="na">metadata</span><span class="pi">:</span>
@@ -88,7 +88,7 @@
     <span class="na">verbs</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">get"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">list"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">watch"</span><span class="pi">]</span>
 
 <span class="nn">---</span>
-<span class="c1"># Sample K9s user ClusterRoleBinding</span>
+<span class="c1"># Sample K9s𝞪user ClusterRoleBinding</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">rbac.authorization.k8s.io/v1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">ClusterRoleBinding</span>
 <span class="na">metadata</span><span class="pi">:</span>
@@ -105,10 +105,10 @@
 
 <h2 id="-role"><img src="/assets/sections/examples.png" width="auto" height="32" /> Role</h2>
 
-<p>If your users are constrained to certain namespaces, K9s will need to following role to enable read access to namespaced resources.</p>
+<p>If your users are constrained to certain namespaces, K9s𝞪will need to following role to enable read access to namespaced resources.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="c1"># K9s Reader Role (default namespace)</span>
+<span class="c1"># K9s𝞪Reader Role (default namespace)</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">Role</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">rbac.authorization.k8s.io/v1</span>
 <span class="na">metadata</span><span class="pi">:</span>
@@ -128,7 +128,7 @@
       <span class="pi">-</span> <span class="s">watch</span>
 
 <span class="nn">---</span>
-<span class="c1"># Sample K9s user RoleBinding</span>
+<span class="c1"># Sample K9s𝞪user RoleBinding</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">rbac.authorization.k8s.io/v1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">RoleBinding</span>
 <span class="na">metadata</span><span class="pi">:</span>
@@ -158,7 +158,7 @@
 <hr />
 <img class="mid-align" src="/assets/imhotep_logo.png" width="32" height="auto" />
 <span class="mid-align">
-  © 2020 Imhotep Software LLC.
+  © 2021 Imhotep Software LLC.
   All materials licensed under <a class="mid-align" href="http://www.apache.org/licenses/LICENSE-2.0">Apache v2.0</a>
 </span>
     </div>

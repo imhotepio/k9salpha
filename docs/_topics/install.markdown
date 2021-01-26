@@ -8,58 +8,25 @@ layout: section
 <br/>
 <br/>
 
-# Installation
-
 <br/>
 
----
-## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
+# <img src="/assets/sections/overview.png" width="auto" height="32"/> Installation
 
-K9s is available on Linux, macOS and Windows platforms.
-
-* Binaries for Linux, Windows and Mac are available as tarballs in the [release](https://github.com/derailed/k9s/releases) page.
-
-* MacOS
-
-   ```shell
-   # Via Homebrew
-   brew install derailed/k9s/k9s
-   # Via MacPort
-   sudo port install k9s
-   ```
+K9sAlpha is available on the following platforms:
 
 * Linux
-
-   ```shell
-   # Via LinuxBrew
-   brew install derailed/k9s/k9s
-   # Via PacMan
-   pacman -S k9s
-   ```
-
+* MacOS
 * Windows
 
-  ```shell
-  # Via scoop
-  scoop install k9s
-  # Via chocolatey
-  choco install k9s
-  ```
+You can download the binaries from our [release page](https://github.com/imhotepio/k9salpha/releases).
 
-## Building From Source
+NOTE: Please bare with us here! In the future we will add support for various package managers or if you have chops in this space, by all means PR this repo!
 
- K9s is currently using go v1.14 or above. In order to build K9 from source you must:
+<br/>
+---
+## <img src="/assets/sections/overview.png" width="auto" height="32"/> PreFlight Check
 
- 1. Clone the repo
- 2. Build and run the executable
-
-      ```shell
-      make build && ./execs/k9s
-      ```
-
-## PreFlight Check
-
-* K9s uses 256 colors terminal mode. On `Nix system make sure TERM is set accordingly.
+* K9s𝞪 uses 256 colors terminal mode. On `Nix system make sure TERM is set accordingly.
 
     ```shell
     export TERM=xterm-256color

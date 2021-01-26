@@ -10,11 +10,11 @@ layout: site
 
 > K9sAlpha - Manage Your Kubernetes Clusters In Style!
 
-From the creators of K9s, comes the next generation of Kubernetes utilities.
+From the creators of K9s, comes the next generation of Kubernetes utilities from the K9s pack namely Alpha!
 
 K9s𝜶 provides a terminal based CLI to interact with your Kubernetes clusters.
 The aim of this project is to make it easier to navigate, observe and manage
-your applications in the wild. K9s𝜶 continually watches Kubernetes cluster
+your applications in the wild. K9s𝜶 continually watches your Kubernetes cluster
 for changes and offers subsequent commands to interact with your observed resources.
 
 <br/>
@@ -48,6 +48,7 @@ for changes and offers subsequent commands to interact with your observed resour
 
 - MultiResources Views
   - Provides for an overview of your cluster resources via Pulses and XRay views.
+  - Workloads provide for monitoring the applications you care for and diagnose not only their health but also the deltas between your manifests on disk vs what is currently running on your cluster.
 
 - We've got your RBAC!
   - Supports for viewing RBAC rules such as cluster/roles and their associated bindings.
@@ -57,34 +58,35 @@ for changes and offers subsequent commands to interact with your observed resour
   - You can benchmark your HTTP services/pods directly from K9sAlpha to see how your application fare and adjust your resources request/limit accordingly.
 
 - Resource Graph Traversals
-  - K9sAlpha provides for easy traversal of Kubernetes resources and their associated resources.
+  - K9sAlpha provides for easy traversal of Kubernetes resources and their dependencies.
 
 <br/>
 
 # <i class="fas fa-bullhorn"></i> Get It!
 
-Although, we will continue to support K9s, K9sAlpha contains the next generation of features and enhancements.
-To this end, in order to use K9sAlpha, you will need to purchase a license key [here](https://k9salpha.myshopify.com)
+Although, we will continue to support K9s, Alpha contains the next generation of features and enhancements.
+You can download the binaries from our [release page](https://github.com/imhotepio/k9salpha/releases). In order to use `Alpha`, you will also need to select a subscription plan that best fit your use cases from our [K9sAlpha Store](https://k9salpha.myshopify.com).
 
 <br/>
 
 # <i class="fas fa-book"/> Documentation
 
-* <i class="fas fa-tools"/> [Installation]({{ "/topics/install" }})
-* <i class="fas fa-terminal"/> [Commands]({{ "/topics/commands" }})
-* <i class="fas fa-car"/> Customizations
-  * Feel
-    * [Configuration]({{ "/topics/config" }})
-    * [Aliases]({{ "/topics/aliases" }})
-    * [HotKeys]({{ "/topics/hotkeys" }})
-    * [Plugins]({{ "/topics/plugins" }})
-    * [Node Shell]({{ "/topics/shell" }})
-  * Look
-    * [Skins]({{ "/topics/skins" }})
-    * [Resource Columns]({{ "/topics/columns" }})
-* <i class="fas fa-tachometer-alt"/> [Benchmarking]({{ "/topics/bench" }})
-* <i class="fas fa-key"/> [RBAC]({{ "/topics/rbac" }})
-* <i class="fas fa-video"/> [Tutorials]({{ "/topics/video" }})
+- [Installation]({{ "/topics/install" }})
+- [Quick Start]({{ "/topics/quick-start" }})
+- [Configuration]({{ "/topics/config" }})
+- Contexts
+  - [Config]({{ "/topics/context-config" }})
+  - [Benchmarks]({{ "/topics/bench" }})
+  - [Skins]({{ "/topics/skins" }})
+  - Workloads (NEW!)
+    - [Config]({{ "/topics/workloads" }})
+    - [Scans]({{ "/topics/scans" }})
+- [Aliases]({{ "/topics/aliases" }})
+- [HotKeys]({{ "/topics/hotkeys" }})
+- [Plugins]({{ "/topics/plugins" }})
+- [Resource Columns]({{ "/topics/columns" }})
+- [RBAC]({{ "/topics/rbac" }})
+- [Tutorials]({{ "/topics/video" }})
 
 <br/>
 
@@ -102,12 +104,10 @@ To this end, in order to use K9sAlpha, you will need to purchase a license key [
   <img src="assets/screens/logs.png"/>
 - RBAC - *View the who/what/how of authorizations on your cluster*
   <img src="assets/screens/rbac.png"/>
-
-<br/>
-
-## <i class="fas fa-thumbs-up"></i> ATTA Girls/Boys!
-
-K9s sits on top of many open source projects and libraries. Our *sincere* appreciations to all the OSS contributors that work nights and weekends to make this project a reality!
+- Workloads - *Define and monitor various workloads on your cluster*
+  <img src="assets/screens/wks.png"/>
+- Workload - *View a specific workload related resource list and scans*
+  <img src="assets/screens/wk.png"/>
 
 <br/>
 
@@ -124,6 +124,6 @@ K9s sits on top of many open source projects and libraries. Our *sincere* apprec
 ---
 <img class="mid-align" src="/assets/imhotep_logo.png" width="32" height="auto"/>
 <span class="mid-align">
-  © 2020 Imhotep Software LLC. All materials licensed under
+  © 2021 Imhotep Software LLC. All materials licensed under
 </span>
 <a class="mid-align" href="http://www.apache.org/licenses/LICENSE-2.0">Apache v2.0</a>

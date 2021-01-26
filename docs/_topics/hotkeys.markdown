@@ -10,18 +10,11 @@ layout: section
 
 # HotKeys
 
+Entering the command mode and typing a resource name or alias could be cumbersome for navigating thru often visited resources. By leveraging `hotkeys`, K9s𝞪 can be configured to quickly navigate to your favorite resources. In order to enable hotkeys create a file `$HOME/.k9s-alpha/hotkey.yml`
+
 <br/>
 
-## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
-
-Entering the command mode and typing a resource name or alias could be cumbersome for navigating thru often visited resources. By leveraging `hotkeys`, K9s can be configured to quickly navigate to your favorite resources. In order to enable hotkeys please follow these steps:
-
-1. Create a file named `$HOME/.k9s/hotkey.yml`
-2. Add the following to your `hotkey.yml`. You can use resource name/short name to specify a command ie same as typing it while in command mode.
-
-Not feeling so hot? Your custom hotkeys will be listed in the help view `?`. Also your hotkey file will be automatically reloaded so you can readily use your hotkeys as you define them.
-
-You can choose any keyboard shortcuts that make sense to you, provided they are not part of the standard K9s shortcuts list.
+## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
 
 <br/>
 <div class="note">
@@ -30,27 +23,34 @@ You can choose any keyboard shortcuts that make sense to you, provided they are 
 
 <br/>
 
-## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
-
 ```yaml
-# $HOME/.k9s/hotkey.yml
+# $HOME/.k9s-alpha/hotkey.yml
 hotKey:
 
-  # Hitting Shift-0 navigates to your pod view
+  # Shift-0 navigates to the pod view in the current namespace.
   shift-0:
     shortCut:    Shift-0
     description: Viewing pods
     command:     pods
 
-  # Hitting Shift-1 navigates to your deployments
+  # Shift-1 navigates to the deployment view in namespace fred.
   shift-1:
     shortCut:    Shift-1
     description: View deployments
-    command:     dp
+    command:     dp fred
 
-  # Hitting Shift-2 navigates to your xray deployments
+  # Hitting Shift-2 navigates to the xray view.
   shift-2:
     shortCut:    Shift-2
     description: XRay Deployments
     command:     xray deploy
 ```
+
+<br/>
+---
+
+## <img src="/assets/sections/overview.png" width="auto" height="32"/> Not feeling so hot?
+
+You can list all your active hot-key using the help view `?`. To boot, your hotkey file will be automatically reloaded so you can readily use your hotkeys as you define them.
+
+NOTE! You can choose any keyboard shortcuts that make sense to you, provided they are not already registered as a standard K9s𝞪 mnemonic.

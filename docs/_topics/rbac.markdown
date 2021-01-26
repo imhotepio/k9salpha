@@ -14,13 +14,13 @@ layout: section
 
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
 
-On RBAC enabled clusters, you would need to give your users/groups capabilities so that they can use K9s to explore their Kubernetes cluster. K9s needs minimally read privileges at both the cluster and namespace level to display resources and metrics.
+On RBAC enabled clusters, you would need to give your users/groups capabilities so that they can use K9s𝞪to explore their Kubernetes cluster. K9s𝞪needs minimally read privileges at both the cluster and namespace level to display resources and metrics.
 
 These rules below are just suggestions. You will need to customize them based on your environment policies. If you need to edit/delete resources extra Fu will be necessary.
 
 <br/>
 <div class="note">
-  <i class="fas fa-skull"></i> Cluster/Namespace access may change in the future as K9s evolves.
+  <i class="fas fa-skull"></i> Cluster/Namespace access may change in the future as K9s𝞪evolves.
 </div>
 
 <br/>
@@ -29,7 +29,7 @@ These rules below are just suggestions. You will need to customize them based on
 
 ```yaml
 ---
-# K9s Reader ClusterRole
+# K9s𝞪Reader ClusterRole
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
@@ -53,7 +53,7 @@ rules:
     verbs: ["get", "list", "watch"]
 
 ---
-# Sample K9s user ClusterRoleBinding
+# Sample K9s𝞪user ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -70,11 +70,11 @@ roleRef:
 
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Role
 
-If your users are constrained to certain namespaces, K9s will need to following role to enable read access to namespaced resources.
+If your users are constrained to certain namespaces, K9s𝞪will need to following role to enable read access to namespaced resources.
 
 ```yaml
 ---
-# K9s Reader Role (default namespace)
+# K9s𝞪Reader Role (default namespace)
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
@@ -94,7 +94,7 @@ rules:
       - watch
 
 ---
-# Sample K9s user RoleBinding
+# Sample K9s𝞪user RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:

@@ -2,12 +2,12 @@
 name: Feature request
 about: Suggest an idea for this project
 title: ''
-labels: ''
+labels: ''s
 assignees: ''
 
 ---
 
-<img src="https://raw.githubusercontent.com/imhotepio/k9s/master/assets/k9s_small.png" align="right" width="100" height="auto"/>
+<img src="https://raw.githubusercontent.com/imhotepio/k9salpha/master/assets/k9s_small.png" align="right" width="100" height="auto"/>
 
 <br/>
 <br/>
@@ -15,7 +15,7 @@ assignees: ''
 
 
 **Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+A clear and concise description of what the problem is.
 
 **Describe the solution you'd like**
 A clear and concise description of what you want to happen.

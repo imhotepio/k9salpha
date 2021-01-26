@@ -37,15 +37,22 @@
 
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
-      <p><img class="pic" src="assets/k9salpha.png" /></p>
+      <p><img class="pic" src="assets/k9sa_blue_300.png" /></p>
 
 <p><br /></p>
 
-<h1 id="-yo-who-let-the-pods-out"><i class="fas fa-paw"></i> YO! Who Let The Pods Out?</h1>
+<h1 id="-who-let-the-pods-out"><i class="fas fa-paw"></i> Who Let The Pods Out?</h1>
 
-<p>K9sAlpha is a licensed version of the popular k9s tool brought to you by the very same creators!</p>
+<blockquote>
+  <p>K9sAlpha - Manage Your Kubernetes Clusters In Style!</p>
+</blockquote>
 
-<p>K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of this project is to make it easier to navigate, observe and manage your deployed applications in the wild. K9s continually watches Kubernetes for changes and offers subsequent commands to interact with your observed resources.</p>
+<p>From the creators of K9s, comes the next generation of Kubernetes utilities from the K9s pack namely Alpha!</p>
+
+<p>K9s𝜶 provides a terminal based CLI to interact with your Kubernetes clusters.
+The aim of this project is to make it easier to navigate, observe and manage
+your applications in the wild. K9s𝜶 continually watches your Kubernetes cluster
+for changes and offers subsequent commands to interact with your observed resources.</p>
 
 <p><br /></p>
 
@@ -94,6 +101,7 @@
   <li>MultiResources Views
     <ul>
       <li>Provides for an overview of your cluster resources via Pulses and XRay views.</li>
+      <li>Workloads provide for monitoring the applications you care for and diagnose not only their health but also the deltas between your manifests on disk vs what is currently running on your cluster.</li>
     </ul>
   </li>
   <li>We’ve got your RBAC!
@@ -109,7 +117,7 @@
   </li>
   <li>Resource Graph Traversals
     <ul>
-      <li>K9sAlpha provides for easy traversal of Kubernetes resources and their associated resources.</li>
+      <li>K9sAlpha provides for easy traversal of Kubernetes resources and their dependencies.</li>
     </ul>
   </li>
 </ul>
@@ -118,38 +126,36 @@
 
 <h1 id="-get-it"><i class="fas fa-bullhorn"></i> Get It!</h1>
 
-<p>Although, we will continue to support K9s, K9sAlpha contains the next generation of features and enhancements.
-To this end, in order to use K9sAlpha, you will need to purchase a license key <a href="k9salpha.myshopify.com">here</a></p>
+<p>Although, we will continue to support K9s, Alpha contains the next generation of features and enhancements.
+You can download the binaries from our <a href="https://github.com/imhotepio/k9salpha/releases">release page</a>. In order to use <code class="highlighter-rouge">Alpha</code>, you will also need to select a subscription plan that best fit your use cases from our <a href="https://k9salpha.myshopify.com">K9sAlpha Store</a>.</p>
 
 <p><br /></p>
 
 <h1 id="-documentation"><i class="fas fa-book"></i> Documentation</h1>
 
 <ul>
-  <li><i class="fas fa-tools"></i> <a href="/topics/install">Installation</a></li>
-  <li><i class="fas fa-terminal"></i> <a href="/topics/commands">Commands</a></li>
-  <li><i class="fas fa-car"></i> Customizations
+  <li><a href="/topics/install">Installation</a></li>
+  <li><a href="/topics/quick-start">Quick Start</a></li>
+  <li><a href="/topics/config">Configuration</a></li>
+  <li>Contexts
     <ul>
-      <li>Feel
+      <li><a href="/topics/context-config">Config</a></li>
+      <li><a href="/topics/bench">Benchmarks</a></li>
+      <li><a href="/topics/skins">Skins</a></li>
+      <li>Workloads (NEW!)
         <ul>
-          <li><a href="/topics/config">Configuration</a></li>
-          <li><a href="/topics/aliases">Aliases</a></li>
-          <li><a href="/topics/hotkeys">HotKeys</a></li>
-          <li><a href="/topics/plugins">Plugins</a></li>
-          <li><a href="/topics/shell">Node Shell</a></li>
-        </ul>
-      </li>
-      <li>Look
-        <ul>
-          <li><a href="/topics/skins">Skins</a></li>
-          <li><a href="/topics/columns">Resource Columns</a></li>
+          <li><a href="/topics/workloads">Config</a></li>
+          <li><a href="/topics/scans">Scans</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><i class="fas fa-tachometer-alt"></i> <a href="/topics/bench">Benchmarking</a></li>
-  <li><i class="fas fa-key"></i> <a href="/topics/rbac">RBAC</a></li>
-  <li><i class="fas fa-video"></i> <a href="/topics/video">Tutorials</a></li>
+  <li><a href="/topics/aliases">Aliases</a></li>
+  <li><a href="/topics/hotkeys">HotKeys</a></li>
+  <li><a href="/topics/plugins">Plugins</a></li>
+  <li><a href="/topics/columns">Resource Columns</a></li>
+  <li><a href="/topics/rbac">RBAC</a></li>
+  <li><a href="/topics/video">Tutorials</a></li>
 </ul>
 
 <p><br /></p>
@@ -169,13 +175,11 @@ To this end, in order to use K9sAlpha, you will need to purchase a license key <
 <img src="assets/screens/logs.png" /></li>
   <li>RBAC - <em>View the who/what/how of authorizations on your cluster</em>
 <img src="assets/screens/rbac.png" /></li>
+  <li>Workloads - <em>Define and monitor various workloads on your cluster</em>
+<img src="assets/screens/wks.png" /></li>
+  <li>Workload - <em>View a specific workload related resource list and scans</em>
+<img src="assets/screens/wk.png" /></li>
 </ul>
-
-<p><br /></p>
-
-<h2 id="-atta-girlsboys"><i class="fas fa-thumbs-up"></i> ATTA Girls/Boys!</h2>
-
-<p>K9s sits on top of many open source projects and libraries. Our <em>sincere</em> appreciations to all the OSS contributors that work nights and weekends to make this project a reality!</p>
 
 <p><br /></p>
 
@@ -183,8 +187,8 @@ To this end, in order to use K9sAlpha, you will need to purchase a license key <
 
 <ul>
   <li><i class="fas fa-at fa-2x"></i>  <a href="mailto://fernand@k9salpha.io">Fernand Galiana</a></li>
-  <li><i class="fab fa-twitter fa-2x"></i> <a href="https://twitter.com/k9salpha?lang=en">@k9salpha</a></li>
-  <li><i class="fab fa-github fa-2x"></i> <a href="https://github.com/k9salpha/releases">K9sAlpha Repo</a></li>
+  <li><i class="fab fa-twitter fa-2x"></i> <a href="https://twitter.com/kitesurfer?lang=en">@kitesurfer</a></li>
+  <li><i class="fab fa-github fa-2x"></i> <a href="https://github.com/imhotepio/k9salpha">K9sAlpha Repo</a></li>
   <li><i class="fab fa-slack fa-2x"></i>  <a href="https://k9sers.slack.com/">K9ers Slack</a></li>
   <li><i class="fab fa-slack-hash fa-2x"></i> <a href="https://join.slack.com/t/k9sers/shared_invite/enQtOTA5MDEyNzI5MTU0LWQ1ZGI3MzliYzZhZWEyNzYxYzA3NjE0YTk1YmFmNzViZjIyNzhkZGI0MmJjYzhlNjdlMGJhYzE2ZGU1NjkyNTM">K9ers Slack Invite</a></li>
 </ul>
@@ -194,7 +198,7 @@ To this end, in order to use K9sAlpha, you will need to purchase a license key <
 <hr />
 <p><img class="mid-align" src="/assets/imhotep_logo.png" width="32" height="auto" />
 <span class="mid-align">
-  © 2020 Imhotep Software LLC. All materials licensed under
+  © 2021 Imhotep Software LLC. All materials licensed under
 </span>
 <a class="mid-align" href="http://www.apache.org/licenses/LICENSE-2.0">Apache v2.0</a></p>
 

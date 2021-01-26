@@ -18,13 +18,12 @@ email: fernand@k9salpha.io
 description: >- # this means to ignore newlines until "baseurl:"
   K9sAlpha provides a terminal UI to interact with your Kubernetes clusters.
   The aim of this project is to make it easier to navigate, observe and manage
-  your Kubernetes applications in the wild. K9s continually watches Kubernetes
+  your Kubernetes applications in the wild. K9s𝞪continually watches Kubernetes
   for changes and offers subsequent commands to interact with your observed resources.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://k9salpha.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter: k9salpha
-github: k9salpha/releases
-repository: k9salpha/releases
+twitter: kitesurfer
+github: imhotepio/k9salpha
 
 # Build settings
 markdown: kramdown

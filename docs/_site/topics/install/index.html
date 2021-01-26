@@ -44,67 +44,28 @@
 <br />
 <br /></p>
 
-<h1 id="installation">Installation</h1>
-
 <p><br /></p>
 
-<hr />
-<h2 id="-overview"><img src="/assets/sections/overview.png" width="auto" height="32" /> Overview</h2>
+<h1 id="-installation"><img src="/assets/sections/overview.png" width="auto" height="32" /> Installation</h1>
 
-<p>K9s is available on Linux, macOS and Windows platforms.</p>
+<p>K9sAlpha is available on the following platforms:</p>
 
 <ul>
-  <li>
-    <p>Binaries for Linux, Windows and Mac are available as tarballs in the <a href="https://github.com/derailed/k9s/releases">release</a> page.</p>
-  </li>
-  <li>
-    <p>MacOS</p>
-
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c"># Via Homebrew</span>
- brew install derailed/k9s/k9s
- <span class="c"># Via MacPort</span>
- <span class="nb">sudo </span>port install k9s
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Linux</p>
-
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c"># Via LinuxBrew</span>
- brew install derailed/k9s/k9s
- <span class="c"># Via PacMan</span>
- pacman <span class="nt">-S</span> k9s
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Windows</p>
-
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Via scoop</span>
-scoop install k9s
-<span class="c"># Via chocolatey</span>
-choco install k9s
-</code></pre></div>    </div>
-  </li>
+  <li>Linux</li>
+  <li>MacOS</li>
+  <li>Windows</li>
 </ul>
 
-<h2 id="building-from-source">Building From Source</h2>
+<p>You can download the binaries from our <a href="https://github.com/imhotepio/k9salpha/releases">release page</a>.</p>
 
-<p>K9s is currently using go v1.14 or above. In order to build K9 from source you must:</p>
+<p>NOTE: Please bare with us here! In the future we will add support for various package managers or if you have chops in this space, by all means PR this repo!</p>
 
-<ol>
-  <li>Clone the repo</li>
-  <li>
-    <p>Build and run the executable</p>
-
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  make build <span class="o">&amp;&amp;</span> ./execs/k9s
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<h2 id="preflight-check">PreFlight Check</h2>
+<h2><br /></h2>
+<h2 id="-preflight-check"><img src="/assets/sections/overview.png" width="auto" height="32" /> PreFlight Check</h2>
 
 <ul>
   <li>
-    <p>K9s uses 256 colors terminal mode. On `Nix system make sure TERM is set accordingly.</p>
+    <p>K9s𝞪 uses 256 colors terminal mode. On `Nix system make sure TERM is set accordingly.</p>
 
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">export </span><span class="nv">TERM</span><span class="o">=</span>xterm-256color
 </code></pre></div>    </div>
@@ -125,7 +86,7 @@ choco install k9s
 <hr />
 <img class="mid-align" src="/assets/imhotep_logo.png" width="32" height="auto" />
 <span class="mid-align">
-  © 2020 Imhotep Software LLC.
+  © 2021 Imhotep Software LLC.
   All materials licensed under <a class="mid-align" href="http://www.apache.org/licenses/LICENSE-2.0">Apache v2.0</a>
 </span>
     </div>
