@@ -25,6 +25,24 @@ IMPORTANT! Alpha currently only support plain old k8s manifests or Kustomization
 
 NOTE! These queries are highly process/mem intensive and mileage will vary depending on the clusters size and resources complexity!
 
+Initially, we're going to limit the workload queries to only scan for labels match on the following resources:
+
+- ConfigMaps
+- Secrets
+- ServiceAccounts
+- Pods
+- Services
+- StorageClasses
+- PersistentVolumes
+- PersistentVolumeClaims
+- ReplicaSets
+- Deployments
+- StatefulSets
+- DaemonSets
+- Roles
+- RoleBindings
+- ClusterRoles
+- ClusterRoleBindings
 
 <div class="center">
   <img src="/assets/screens/wks.png" align="center" width="800" height="auto">
