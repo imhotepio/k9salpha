@@ -48,7 +48,7 @@
 
 <h2 id="-cli"><img src="/assets/sections/overview.png" width="auto" height="32" /> CLI</h2>
 
-<p>K9s𝞪 CLI comes with a view options to launch the tool with different configurations.</p>
+<p>K9s𝞪 CLI comes with a few options to launch the tool with different configurations.</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># List all available CLI options</span>
 k9salpha <span class="nb">help</span>
@@ -62,110 +62,89 @@ k9salpha <span class="nt">-n</span> mycoolns
 <span class="c"># Run K9s𝞪 and launch in pod view via the pod command.</span>
 k9salpha <span class="nt">-c</span> pod
 
-<span class="c"># Start K9s𝞪 in a non default KubeConfig context</span>
+<span class="c"># Start K9s𝞪 in a using a specific KubeConfig context</span>
 k9salpha <span class="nt">--context</span> coolCtx
 
 <span class="c"># Start K9s𝞪 in readonly mode - with all modification commands disabled</span>
 k9salpha <span class="nt">--readonly</span>
+
+<span class="c"># Start K9s𝞪 in debug mode. See logs location using the k9salpha info command above</span>
+k9salpha <span class="nt">-l</span> debug
 </code></pre></div></div>
 
 <p><br /></p>
 
-<h2 id="-in-app-keyboard-bindings"><img src="/assets/sections/examples.png" width="auto" height="32" /> In App KeyBoard Bindings</h2>
+<h2 id="-artifact-locations"><img src="/assets/sections/examples.png" width="auto" height="32" /> Artifact Locations</h2>
+
+<p>K9sAlpha now uses <a href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG</a> to store its various configurations, data, logs, etc… The table below defines the various env variable you can define and the default locations. Please see the refer to the XDG spec for more details on overriding this locations.</p>
 
 <table>
   <thead>
     <tr>
-      <th>Action</th>
-      <th>Example</th>
-      <th>Description</th>
+      <th style="text-align: left">Env Vars</th>
+      <th style="text-align: left">Unix</th>
+      <th style="text-align: left">MacOS</th>
+      <th style="text-align: left">Windows</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Help</td>
-      <td><code class="language-plaintext highlighter-rouge">?</code></td>
-      <td>Display context sensitive help</td>
+      <td style="text-align: left">XDG_CONFIG_HOME</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">~/.config</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">~/Library/Preferences</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">%LOCALAPPDATA%</code></td>
     </tr>
     <tr>
-      <td>Aliases</td>
-      <td><code class="language-plaintext highlighter-rouge">ctrl-a</code></td>
-      <td>List available cluster resources and aliases</td>
+      <td style="text-align: left">XDG_DATA_HOME</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">~/.local/share</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">~/Library/Application Support</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">%LOCALAPPDATA%</code></td>
     </tr>
     <tr>
-      <td>Exit</td>
-      <td><code class="language-plaintext highlighter-rouge">:q</code>, <code class="language-plaintext highlighter-rouge">ctrl-c</code></td>
-      <td>Terminates the application</td>
+      <td style="text-align: left">XDG_CACHE_HOME</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">~/.cache</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">~/Library/Caches</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">%LOCALAPPDATA%\cache</code></td>
     </tr>
     <tr>
-      <td>View a resource</td>
-      <td><code class="language-plaintext highlighter-rouge">:resource⏎</code></td>
-      <td>Accepts singular, plural, short-name or  alias ie <code class="language-plaintext highlighter-rouge">:po</code>,<code class="language-plaintext highlighter-rouge">:pod</code>,<code class="language-plaintext highlighter-rouge">:pods</code> to list pods</td>
+      <td style="text-align: left">XDG_STATE_HOME</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">~/.local/state</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">~/Library/Application Support</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">%LOCALAPPDATA%\state</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>K9sAlpha artifacts are stored in the locations above under the <code class="language-plaintext highlighter-rouge">k9s-alpha</code> directory.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Env var</th>
+      <th style="text-align: left">K9s Artifacts</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">XDG_CONFIG_HOME</td>
+      <td style="text-align: left">config.yaml</td>
+      <td style="text-align: left">General configuration</td>
     </tr>
     <tr>
-      <td>Navigate to a resource in a given namespace</td>
-      <td><code class="language-plaintext highlighter-rouge">:resourcce namespace⏎</code></td>
-      <td>List pods in namespace kube-system <code class="language-plaintext highlighter-rouge">:po kube-system</code></td>
+      <td style="text-align: left">XDG_DATA_HOME</td>
+      <td style="text-align: left">contexts</td>
+      <td style="text-align: left">K8s contexts configurations</td>
     </tr>
     <tr>
-      <td>Filter out a resource view given a filter</td>
-      <td><code class="language-plaintext highlighter-rouge">/filter⏎</code></td>
-      <td>Regex2 supported ie <code class="language-plaintext highlighter-rouge">fred|blee</code> to filter resources named fred or blee</td>
+      <td style="text-align: left">XDG_CACHE_HOME</td>
+      <td style="text-align: left">config.yaml</td>
+      <td style="text-align: left">active contexts, views, ns</td>
     </tr>
     <tr>
-      <td>Inverse regex filer</td>
-      <td><code class="language-plaintext highlighter-rouge">/! filter⏎</code></td>
-      <td>Keep everything that <em>doesn’t</em> match.</td>
-    </tr>
-    <tr>
-      <td>Filter resource by labels</td>
-      <td><code class="language-plaintext highlighter-rouge">/-l app=fred⏎</code></td>
-      <td>filter pods with labels app=fred</td>
-    </tr>
-    <tr>
-      <td>Fuzzy find a resource given a filter</td>
-      <td><code class="language-plaintext highlighter-rouge">/-f filter⏎</code></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Bails out of view/command/filter mode</td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;esc&gt;</code></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Key mapping to describe, view, edit, view logs,…</td>
-      <td><code class="language-plaintext highlighter-rouge">d</code>,<code class="language-plaintext highlighter-rouge">v</code>, <code class="language-plaintext highlighter-rouge">e</code>, <code class="language-plaintext highlighter-rouge">l</code>,…</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>List K8s Contexts</td>
-      <td><code class="language-plaintext highlighter-rouge">:ctx⏎</code></td>
-      <td>List all available from kubeconfig or env var</td>
-    </tr>
-    <tr>
-      <td>Navigate to a given context</td>
-      <td><code class="language-plaintext highlighter-rouge">:ctx context-name⏎</code></td>
-      <td>Switch to fred context <code class="language-plaintext highlighter-rouge">:ctx fred</code></td>
-    </tr>
-    <tr>
-      <td>List all K8s namespaces</td>
-      <td><code class="language-plaintext highlighter-rouge">:ns⏎</code></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>To view all saved resources</td>
-      <td><code class="language-plaintext highlighter-rouge">:screendump</code> or <code class="language-plaintext highlighter-rouge">sd⏎</code></td>
-      <td>View all screen dump</td>
-    </tr>
-    <tr>
-      <td>To delete a resource</td>
-      <td><code class="language-plaintext highlighter-rouge">ctrl-d</code></td>
-      <td>Dialog pops up to confirm (use TAB/SHIFT-TAB,ENTER to navigate fields</td>
-    </tr>
-    <tr>
-      <td>Force delete a resource</td>
-      <td><code class="language-plaintext highlighter-rouge">ctrl-k</code></td>
-      <td>NOTE: Power users - No confirmation dialog</td>
+      <td style="text-align: left">XDG_STATE_HOME</td>
+      <td style="text-align: left">config.yaml</td>
+      <td style="text-align: left">logs, screen-dumps, benchmarks</td>
     </tr>
   </tbody>
 </table>

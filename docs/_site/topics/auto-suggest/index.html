@@ -5,12 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Install</title>
+  <title>Auto Suggest</title>
   <meta name="description"
     content="">
 
   <link rel="stylesheet" href=" /css/main.css ">
-  <link rel="canonical" href="http://localhost:4000/topics/install/">
+  <link rel="canonical" href="http://localhost:4000/topics/auto-suggest/">
   <link rel="alternate" type="application/rss+xml" title="K9sAlpha - Manage Your Kubernetes Clusters In Style" href="http://localhost:4000 /feed.xml
     ">
   <script src="https://kit.fontawesome.com/b45e86135f.js" crossorigin="anonymous"></script>
@@ -38,37 +38,44 @@
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
       <div>
-  <p><i class="icon fas fa-tools fa-7x"></i></p>
+  <p><i class="icon fas fa-robot fa-7x"></i></p>
 
 <p><br />
 <br />
 <br /></p>
 
-<p><br /></p>
+<h1 id="autosuggest">AutoSuggest</h1>
 
-<h1 id="-installation"><img src="/assets/sections/overview.png" width="auto" height="32" /> Installation</h1>
+<p>K9s𝞪 command and filter modes supports auto-suggestions. Suggestions are powered as follows:</p>
 
-<p>K9sAlpha is available on the following platforms:</p>
+<ol>
+  <li>Kubernetes resources provisioned on a given cluster including CRDs using singular/plural or short names form</li>
+  <li>Custom aliases defined via K9s aliases configuration</li>
+  <li>Successful command and search history.</li>
+</ol>
 
-<ul>
-  <li>Linux</li>
-  <li>MacOS</li>
-  <li>Windows</li>
-</ul>
-
-<p>You can download the binaries from our <a href="https://github.com/imhotepio/k9salpha/releases">release page</a>.</p>
-
-<h2><br /></h2>
-<h2 id="-preflight-check"><img src="/assets/sections/overview.png" width="auto" height="32" /> PreFlight Check</h2>
-
-<ul>
-  <li>
-    <p>K9s𝞪 uses 256 colors terminal mode. On `Nix system make sure TERM is set accordingly.</p>
-
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">export </span><span class="nv">TERM</span><span class="o">=</span>xterm-256color
-</code></pre></div>    </div>
-  </li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>⬆️ ⬇️</td>
+      <td>Navigate up or down thru the suggestions</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Ctrl-w</code>, <code class="language-plaintext highlighter-rouge">Ctrl-u</code></td>
+      <td>Clear out the command</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Tab</code>, <code class="language-plaintext highlighter-rouge">Ctrl-f</code>, ➡️</td>
+      <td>Accept the suggestion</td>
+    </tr>
+  </tbody>
+</table>
 
 </div>
 

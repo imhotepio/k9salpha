@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang=" en ">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Config</title>
+  <meta name="description"
+    content="">
+
+  <link rel="stylesheet" href=" /css/main.css ">
+  <link rel="canonical" href="http://localhost:4000/topics/configs/config/">
+  <link rel="alternate" type="application/rss+xml" title="K9sAlpha - Manage Your Kubernetes Clusters In Style" href="http://localhost:4000 /feed.xml
+    ">
+  <script src="https://kit.fontawesome.com/b45e86135f.js" crossorigin="anonymous"></script>
+</head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133652966-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-133652966-1');
+</script>
+
+<body>
+  <header class="site-header" role="banner">
+  <div class="logo">
+    <a class="site-logo" href="/">k9s𝞪</a>
+  </div>
+  <div class="cite">
+    Kubernetes CLI To Manage Your Clusters In Style!
+  </div>
+</header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      <div>
+  <p><i class="fas fa-cogs icon fa-7x"></i></p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="configurations">Configurations</h1>
+
+<p>The configuration files location will vary depending on whether you’ve set up an XDG environments.
+For the following sections, let’s assume we’ve set these XDG environment variables to override the default locations:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">XDG_CONFIG_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.config
+<span class="nb">export </span><span class="nv">XDG_CACHE_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.cache
+<span class="nb">export </span><span class="nv">XDG_STATE_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.local/state
+</code></pre></div></div>
+
+<p>K9s configurations are divided into two main groups:</p>
+
+<ol>
+  <li>Global contains general settings and defaults</li>
+  <li>Context specifies configurations to target a given Kubernetes context</li>
+</ol>
+
+<p>Global configurations reside in <code class="language-plaintext highlighter-rouge">$HOME/.config/k9s-alpha</code> and contains the following files:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">File</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">aliases.yaml</td>
+      <td style="text-align: left">Defines custom resource aliases</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">config.yaml</td>
+      <td style="text-align: left">Defines the main application settins and defaults</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">default-skins.yaml</td>
+      <td style="text-align: left">The primordial skins theme</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">hotkeys.yaml</td>
+      <td style="text-align: left">Specifies keysboard shortcuts for faster resource traversals</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">license.yaml</td>
+      <td style="text-align: left">Contains your application license key</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">plugins.yaml</td>
+      <td style="text-align: left">Defines plugins definitions and activation keyboard shortcuts</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">views.yaml</td>
+      <td style="text-align: left">Provides for resource views custom column definitions</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Context configurations reside in <code class="language-plaintext highlighter-rouge">$HOME/.config/k9s-alpha/contexts</code> and contains the following files:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">File</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">benchmarks.yaml</td>
+      <td style="text-align: left">Defines custom benchmarking settings</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">config.yaml</td>
+      <td style="text-align: left">Defines a cluster specific configuration</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">scans.yaml</td>
+      <td style="text-align: left">Specifies the cluster scan excludes configurations</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">skins.yaml</td>
+      <td style="text-align: left">Defines skins specific to that cluster</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">workloads.yaml</td>
+      <td style="text-align: left">Defines this cluster workload configurations</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For more details about each of these configurations, please see their individual specification in the Configuration section.</p>
+
+<p><br /></p>
+<div class="note">
+  <i class="fas fa-skull"></i> This is still in flux and will change while in pre-release stage!
+</div>
+
+<p><br /></p>
+
+<h2 id="-the-main-configuration"><img src="/assets/sections/examples.png" width="auto" height="32" /> The Main Configuration</h2>
+
+<p>K9s𝞪 keeps its main configurations under <code class="language-plaintext highlighter-rouge">$HOME/.config/k9s-alpha/config.yaml</code>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.config/k9s-alpha/config.yaml</span>
+<span class="na">k9s</span><span class="pi">:</span>
+  <span class="c1"># Sets the refreshRate for updating cluster resources. Default is 2 seconds</span>
+  <span class="na">refreshRate</span><span class="pi">:</span> <span class="m">2</span>
+  <span class="c1"># NEW! Sets the maximum number of retries when trying to connect to k8s api server.</span>
+  <span class="na">maxConnRetry</span><span class="pi">:</span> <span class="m">5</span>
+  <span class="c1"># NEW! Enable idiot light to warn the user for potentially destructive operations. Default is true</span>
+  <span class="c1"># This options can be overridden in the Kubernetes context specific config file.</span>
+  <span class="na">idiotLight</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="c1"># Toggles mouse events</span>
+  <span class="na">enableMouse</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="c1"># Toggles header display.</span>
+  <span class="na">headless</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="c1"># Toggles crumbs.</span>
+  <span class="na">crumbsless</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="c1"># Treats the cluster as a read only cluster and turns off an editing functionality. Default is false</span>
+  <span class="c1"># This option can also be overridden using either a command line option on in a context specific config.</span>
+  <span class="na">readOnly</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="c1"># Toggles terminal icons.</span>
+  <span class="na">noIcons</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="c1"># Define logger configuration.</span>
+  <span class="na">logger</span><span class="pi">:</span>
+    <span class="c1"># Tails the last xxx lines from the logs. Defaults 100.</span>
+    <span class="na">tail</span><span class="pi">:</span> <span class="m">100</span>
+    <span class="c1"># Sets the max number of lines to display while in log view. Defaults 5k.</span>
+    <span class="na">buffer</span><span class="pi">:</span> <span class="m">5000</span>
+    <span class="c1"># Set the timeline to retrieve the logs in seconds. Defaults 60secs.</span>
+    <span class="na">sinceSeconds</span><span class="pi">:</span> <span class="m">60</span>
+    <span class="c1"># Toggles log full screen display. Defaults false.</span>
+    <span class="na">fullScreenLogs</span><span class="pi">:</span> <span class="no">false</span>
+    <span class="c1"># Toggles log text wrap. Defaults false.</span>
+    <span class="na">textWrap</span><span class="pi">:</span> <span class="no">false</span>
+    <span class="c1"># Toggles show log time stamps. Default false.</span>
+    <span class="na">showTime</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="c1"># Sets thresholds for over cpu/memory alerts</span>
+  <span class="na">thresholds</span><span class="pi">:</span>
+    <span class="c1"># Sets cpu max thresholds. K9s𝞪will display an alert when these thresholds are exceeded.</span>
+    <span class="na">cpu</span><span class="pi">:</span>
+      <span class="na">critical</span><span class="pi">:</span> <span class="m">90</span>
+      <span class="na">warn</span><span class="pi">:</span> <span class="m">70</span>
+    <span class="c1"># Sets mem max thresholds. K9s𝞪will display an alert when these thresholds are exceeded.</span>
+    <span class="na">memory</span><span class="pi">:</span>
+      <span class="na">critical</span><span class="pi">:</span> <span class="m">90</span>
+      <span class="na">warn</span><span class="pi">:</span> <span class="m">70</span>
+</code></pre></div></div>
+
+</div>
+
+<br />
+<div>
+  <a class="mid-align" href="/">
+    <i class="mid-align fas fa-2x fa-hand-point-left"></i>
+    &nbsp;<span class="mid-align">Back</span>
+  </a>
+</div>
+<br />
+<br />
+<hr />
+<img class="mid-align" src="/assets/imhotep_logo.png" width="32" height="auto" />
+<span class="mid-align">
+  © 2021 Imhotep Software LLC.
+  All materials licensed under <a class="mid-align" href="http://www.apache.org/licenses/LICENSE-2.0">Apache v2.0</a>
+</span>
+    </div>
+  </main>
+</body>
+
+</html>

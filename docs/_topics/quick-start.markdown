@@ -12,7 +12,7 @@ layout: section
 
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> CLI
 
-K9s𝞪 CLI comes with a view options to launch the tool with different configurations.
+K9s𝞪 CLI comes with a few options to launch the tool with different configurations.
 
 ```shell
 # List all available CLI options
@@ -27,33 +27,34 @@ k9salpha -n mycoolns
 # Run K9s𝞪 and launch in pod view via the pod command.
 k9salpha -c pod
 
-# Start K9s𝞪 in a non default KubeConfig context
+# Start K9s𝞪 in a using a specific KubeConfig context
 k9salpha --context coolCtx
 
 # Start K9s𝞪 in readonly mode - with all modification commands disabled
 k9salpha --readonly
+
+# Start K9s𝞪 in debug mode. See logs location using the k9salpha info command above
+k9salpha -l debug
 ```
 
 <br/>
 
-## <img src="/assets/sections/examples.png" width="auto" height="32"/> In App KeyBoard Bindings
+## <img src="/assets/sections/examples.png" width="auto" height="32"/> Artifact Locations
 
-| Action                                                         | Example                       | Description                                                            |
-|----------------------------------------------------------------|-------------------------------|------------------------------------------------------------------------|
-| Help                                                           | `?`                           | Display context sensitive help                                         |
-| Aliases                                                        | `ctrl-a`                      | List available cluster resources and aliases                           |
-| Exit                                                           | `:q`, `ctrl-c`                | Terminates the application                                             |
-| View a resource                                                | `:resource⏎`                  | Accepts singular, plural, short-name or  alias ie `:po`,`:pod`,`:pods` to list pods |
-| Navigate to a resource in a given namespace                    | `:resourcce namespace⏎`       | List pods in namespace kube-system `:po kube-system`                   |
-| Filter out a resource view given a filter                      | `/filter⏎`                    | Regex2 supported ie `fred|blee` to filter resources named fred or blee |
-| Inverse regex filer                                            | `/! filter⏎`                  | Keep everything that *doesn't* match.                                  |
-| Filter resource by labels                                      | `/-l app=fred⏎`               | filter pods with labels app=fred                                       |
-| Fuzzy find a resource given a filter                           | `/-f filter⏎`                 |                                                                        |
-| Bails out of view/command/filter mode                          | `<esc>`                       |                                                                        |
-| Key mapping to describe, view, edit, view logs,...             | `d`,`v`, `e`, `l`,...         |                                                                        |
-| List K8s Contexts                                              | `:ctx⏎`                       | List all available from kubeconfig or env var                          |
-| Navigate to a given context                                    | `:ctx context-name⏎`          | Switch to fred context `:ctx fred`                                     |
-| List all K8s namespaces                                        | `:ns⏎`                        |                                                                        |
-| To view all saved resources                                    | `:screendump` or `sd⏎`        | View all screen dump                                                   |
-| To delete a resource                                           | `ctrl-d`                      | Dialog pops up to confirm (use TAB/SHIFT-TAB,ENTER to navigate fields  |
-| Force delete a resource                                        | `ctrl-k`                      | NOTE: Power users - No confirmation dialog                             |
+K9sAlpha now uses [XDG](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) to store its various configurations, data, logs, etc... The table below defines the various env variable you can define and the default locations. Please see the refer to the XDG spec for more details on overriding this locations.
+
+| Env Vars        | Unix                                | MacOS                           | Windows                |
+| :-------------- | :---------------------------------- | :------------------------------ | :--------------------- |
+| XDG_CONFIG_HOME | `~/.config`                         | `~/Library/Preferences`         | `%LOCALAPPDATA%`       |
+| XDG_DATA_HOME   | `~/.local/share`                    | `~/Library/Application Support` | `%LOCALAPPDATA%`       |
+| XDG_CACHE_HOME  | `~/.cache`                          | `~/Library/Caches`              | `%LOCALAPPDATA%\cache` |
+| XDG_STATE_HOME  | `~/.local/state`                    | `~/Library/Application Support` | `%LOCALAPPDATA%\state` |
+
+K9sAlpha artifacts are stored in the locations above under the `k9s-alpha` directory.
+
+| Env var         | K9s Artifacts | Description                    |
+| :-------------- | :------------ | :----------------------------- |
+| XDG_CONFIG_HOME | config.yaml   | General configuration          |
+| XDG_DATA_HOME   | contexts      | K8s contexts configurations    |
+| XDG_CACHE_HOME  | config.yaml   | active contexts, views, ns     |
+| XDG_STATE_HOME  | config.yaml   | logs, screen-dumps, benchmarks |

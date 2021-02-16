@@ -72,7 +72,7 @@ roleRef:
 
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Role
 
-If your users are constrained to certain namespaces, K9s𝞪will need to following role to enable read access to namespaced resources.
+If your users are constrained to certain namespaces, K9s𝞪 will need to following role to enable read access to namespaced resources.
 
 ```yaml
 ---
@@ -96,7 +96,7 @@ rules:
       - watch
 
 ---
-# Sample K9s𝞪user RoleBinding
+# Sample K9s𝞪 user RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:

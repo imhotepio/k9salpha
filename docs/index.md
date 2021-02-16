@@ -73,18 +73,21 @@ You can download the binaries from our [release page](https://github.com/imhotep
 
 - [Installation]({{ "/topics/install" }})
 - [Quick Start]({{ "/topics/quick-start" }})
-- [Configuration]({{ "/topics/config" }})
-- Contexts
-  - [Config]({{ "/topics/context-config" }})
-  - [Benchmarks]({{ "/topics/bench" }})
-  - [Skins]({{ "/topics/skins" }})
-  - Workloads (NEW!)
-    - [Config]({{ "/topics/workloads" }})
-    - [Scans]({{ "/topics/scans" }})
-- [Aliases]({{ "/topics/aliases" }})
-- [HotKeys]({{ "/topics/hotkeys" }})
-- [Plugins]({{ "/topics/plugins" }})
-- [Resource Columns]({{ "/topics/columns" }})
+- [Navigation]({{ "/topics/navigation" }})
+- Configurations
+  - General
+    - [Config]({{ "/topics/configs/config" }})
+    - [Benchmarks]({{ "/topics/configs/benchmarks" }})
+    - [Skins]({{ "/topics/configs/skins" }})
+    - [Aliases]({{ "/topics/configs/aliases" }})
+    - [HotKeys]({{ "/topics/configs/hotkeys" }})
+    - [Plugins]({{ "/topics/configs/plugins" }})
+    - [Views]({{ "/topics/configs/views" }})
+  - Contexts
+    - [Config]({{ "/topics/configs/context/config" }})
+    - [Workloads]({{ "/topics/configs/context/workloads" }})
+    - [Scans]({{ "/topics/configs/context/scans" }})
+- [AutoSuggest]({{ "/topics/auto-suggest" }})
 - [RBAC]({{ "/topics/rbac" }})
 
 <br/>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang=" en ">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Benchmarks</title>
+  <meta name="description"
+    content="">
+
+  <link rel="stylesheet" href=" /css/main.css ">
+  <link rel="canonical" href="http://localhost:4000/topics/configs/benchmarks/">
+  <link rel="alternate" type="application/rss+xml" title="K9sAlpha - Manage Your Kubernetes Clusters In Style" href="http://localhost:4000 /feed.xml
+    ">
+  <script src="https://kit.fontawesome.com/b45e86135f.js" crossorigin="anonymous"></script>
+</head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133652966-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-133652966-1');
+</script>
+
+<body>
+  <header class="site-header" role="banner">
+  <div class="logo">
+    <a class="site-logo" href="/">k9s𝞪</a>
+  </div>
+  <div class="cite">
+    Kubernetes CLI To Manage Your Clusters In Style!
+  </div>
+</header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      <div>
+  <p><i class="icon fas fa-tachometer-alt fa-7x"></i></p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="benchmarks">Benchmarks</h1>
+
+<p><br /></p>
+
+<h2 id="-overview"><img src="/assets/sections/overview.png" width="auto" height="32" /> Overview</h2>
+
+<p>K9s𝞪 integrates <a href="https://github.com/rakyll/hey">Hey</a> from the brilliant and super talented <a href="https://github.com/rakyll">Jaana Dogan</a>. <code class="language-plaintext highlighter-rouge">Hey</code> is a CLI tool to benchmark HTTP endpoints similar to AB bench. This feature allows you to benchmark web based containers and services to provide insights on performance objectives and resources settings.</p>
+
+<p>To setup a port-forward, you will need to navigate to the PodView, select a pod and a container that exposes a given port. Using <code class="language-plaintext highlighter-rouge">SHIFT-F</code> a dialog comes up to allow you to specify a local port to forward to. Once acknowledged, you can navigate to the PortForward view by pressing <code class="language-plaintext highlighter-rouge">f</code> on the forwarded pod. Selecting a port-forward and using <code class="language-plaintext highlighter-rouge">b</code> will run a benchmark on that HTTP endpoint. To view your benchmark results, press <code class="language-plaintext highlighter-rouge">&lt;ENTER&gt;</code> on the port-forward.
+To view go all benchmarks enter the command <code class="language-plaintext highlighter-rouge">:bench</code>. You should now be able to select a benchmark and view the run stats details by pressing <code class="language-plaintext highlighter-rouge">&lt;ENTER&gt;</code> on your selection.</p>
+
+<blockquote>
+  <p>NOTE! Port-forwards only last for the duration of the K9s𝞪 session and will be terminated upon exit.</p>
+</blockquote>
+
+<p>All benchmarks will run with the following defaults:</p>
+
+<ul>
+  <li>Concurrency Level: 1</li>
+  <li>Number of Requests: 200</li>
+  <li>HTTP Verb: GET</li>
+  <li>Path: /</li>
+</ul>
+
+<p>The PortForward view is backed by a K9s𝞪 <code class="language-plaintext highlighter-rouge">benchmarks.yaml</code> file located relative to your Kubernetes context.
+For example <code class="language-plaintext highlighter-rouge">$HOME/.config/k9s-alpha/contexts/contextA/benchmarks.yaml</code> defines benchmark configurations for contextA.
+Each cluster you connect to will have its own benchmark config file. Changes to this file should automatically update the PortForward view to indicate how you want to run your benchmarks.</p>
+
+<p><br /></p>
+<div class="note">
+  <i class="fas fa-skull"></i> Please keep in mind this file will likely change in subsequent releases!
+</div>
+
+<p><br /></p>
+
+<h2 id="-example"><img src="/assets/sections/examples.png" width="auto" height="32" /> Example</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $HOME/.config/k9s-alpha/contexts/contextA/benchmarks.yaml</span>
+<span class="na">benchmarks</span><span class="pi">:</span>
+  <span class="c1"># Indicates the default concurrency and number of requests setting if a container or service rule does not match.</span>
+  <span class="na">defaults</span><span class="pi">:</span>
+    <span class="c1"># Overrides concurrent connection. Default is 1</span>
+    <span class="na">concurrency</span><span class="pi">:</span> <span class="m">2</span>
+    <span class="c1"># Overrides the number of requests that will be sent to an endpoint. Default is 200</span>
+    <span class="na">requests</span><span class="pi">:</span> <span class="m">1000</span>
+  <span class="na">containers</span><span class="pi">:</span>
+    <span class="c1"># Containers section allows you to configure your http container's endpoints and benchmarking settings.</span>
+    <span class="c1"># NOTE: the container ID syntax uses namespace/pod-name:container-name</span>
+    <span class="s">default/nginx:nginx:</span>
+      <span class="s"># Benchmark a container named nginx by calling the post method on endpoint http://localhost:port/bozo.</span>
+      <span class="s">concurrency</span><span class="pi">:</span> <span class="m">1</span>
+      <span class="na">requests</span><span class="pi">:</span> <span class="m">10000</span>
+      <span class="na">http</span><span class="pi">:</span>
+        <span class="c1"># Specifies the target route. Default is /</span>
+        <span class="na">path</span><span class="pi">:</span> <span class="s">/bozo</span>
+        <span class="c1"># Specifies the http method. Default is GET</span>
+        <span class="na">method</span><span class="pi">:</span> <span class="s">POST</span>
+        <span class="c1"># Sets the request body. Default is empty</span>
+        <span class="na">body</span><span class="pi">:</span>
+          <span class="pi">{</span><span class="s2">"</span><span class="s">fred"</span><span class="pi">:</span><span class="s2">"</span><span class="s">blee"</span><span class="pi">}</span>
+        <span class="c1"># Set headers information. Default is empty</span>
+        <span class="na">header</span><span class="pi">:</span>
+          <span class="na">Accept</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">text/html</span>
+          <span class="na">Content-Type</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">application/json</span>
+  <span class="c1"># Similarly you can benchmark an HTTP service exposed either via NodePort or LoadBalancer types.</span>
+  <span class="na">services</span><span class="pi">:</span>
+    <span class="c1"># Service ID is ns/svc-name</span>
+    <span class="s">default/nginx</span><span class="pi">:</span>
+      <span class="c1"># Set the concurrency level</span>
+      <span class="na">concurrency</span><span class="pi">:</span> <span class="m">5</span>
+      <span class="c1"># Number of requests to be sent</span>
+      <span class="na">requests</span><span class="pi">:</span> <span class="m">500</span>
+      <span class="na">http</span><span class="pi">:</span>
+        <span class="na">method</span><span class="pi">:</span> <span class="s">GET</span>
+        <span class="c1"># This setting will depend on whether service is ModePort or LoadBalancer. NodePort may require vendor port tunneling setting.</span>
+        <span class="c1"># Set this to a node if ModePort or LB if applicable. IP or DNS name.</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s">1.2.3.4</span>
+        <span class="na">path</span><span class="pi">:</span> <span class="s">/bumblebeetuna</span>
+      <span class="na">auth</span><span class="pi">:</span>
+        <span class="na">user</span><span class="pi">:</span> <span class="s">jean-baptiste-emmanuel</span>
+        <span class="na">password</span><span class="pi">:</span> <span class="s">Zorg!</span>
+</code></pre></div></div>
+
+</div>
+
+<br />
+<div>
+  <a class="mid-align" href="/">
+    <i class="mid-align fas fa-2x fa-hand-point-left"></i>
+    &nbsp;<span class="mid-align">Back</span>
+  </a>
+</div>
+<br />
+<br />
+<hr />
+<img class="mid-align" src="/assets/imhotep_logo.png" width="32" height="auto" />
+<span class="mid-align">
+  © 2021 Imhotep Software LLC.
+  All materials licensed under <a class="mid-align" href="http://www.apache.org/licenses/LICENSE-2.0">Apache v2.0</a>
+</span>
+    </div>
+  </main>
+</body>
+
+</html>
