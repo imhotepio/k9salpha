@@ -11,7 +11,7 @@ layout: section
 # Configurations
 
 The configuration files location will vary depending on whether you've set up an XDG environments.
-For the following sections, let's assume we've set these XDG environment variables to override the default locations:
+For the following sections, let's assume we've set these [XDG](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) environment variables to override the default locations:
 
 ```shell
 export XDG_CONFIG_HOME=$HOME/.config

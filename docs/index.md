@@ -72,6 +72,7 @@ You can download the binaries from our [release page](https://github.com/imhotep
 # <i class="fas fa-book"/> Documentation
 
 - [Installation]({{ "/topics/install" }})
+- [Licenses]({{ "/topics/licenses" }})
 - [Quick Start]({{ "/topics/quick-start" }})
 - [Navigation]({{ "/topics/navigation" }})
 - Configurations
