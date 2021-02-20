@@ -20,7 +20,6 @@ K9sAlpha is available on the following platforms:
 
 You can download the binaries from our [release page](https://github.com/imhotepio/k9salpha/releases).
 
-<br/>
 ---
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> MacOS Installer
 
