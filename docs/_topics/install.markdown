@@ -22,6 +22,17 @@ You can download the binaries from our [release page](https://github.com/imhotep
 
 <br/>
 ---
+## <img src="/assets/sections/overview.png" width="auto" height="32"/> MacOS Installer
+
+1. Installation via HomeBrew
+
+   ```shell
+   brew tap imhotepio/k9salpha
+   brew install k9salpha
+   ```
+
+<br/>
+---
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> PreFlight Check
 
 * K9s𝞪 uses 256 colors terminal mode. On `Nix system make sure TERM is set accordingly.
