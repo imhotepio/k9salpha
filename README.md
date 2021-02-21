@@ -1,4 +1,4 @@
-<img src="assets/k9sa_blue_300.png" alt="k9salpha">
+<img src="assets/k9salpha-blue.png" alt="k9salpha">
 
 # K9sAlpha - Manage Your Kubernetes Clusters In Style!
 
