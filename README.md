@@ -11,7 +11,7 @@ for changes and offers subsequent commands to interact with your observed resour
 
 ## Licenses
 
-[Visit Our Store](https://k9salpha.myshopify.com).
+[Visit Our Store](https://store.k9salpha.io).
 
 ## Documentation
 

@@ -65,7 +65,7 @@ for changes and offers subsequent commands to interact with your observed resour
 # <i class="fas fa-bullhorn"></i> Get It!
 
 Although, we will continue to support K9s, Alpha contains the next generation of features and enhancements.
-You can download the binaries from our [release page](https://github.com/imhotepio/k9salpha/releases). In order to use `Alpha`, you will also need to select a subscription plan that best fit your use cases from our [K9sAlpha Store](https://k9salpha.myshopify.com).
+You can download the binaries from our [release page](https://github.com/imhotepio/k9salpha/releases). In order to use `Alpha`, you will also need to select a subscription plan that best fit your use cases from our [K9sAlpha Store](https://store.k9salpha.io).
 
 <br/>
 
