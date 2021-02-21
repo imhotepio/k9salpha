@@ -10,7 +10,7 @@ layout: section
 
 # Licenses
 
-K9s𝞪 currently offers two main license types namely PowerI and PowerII.
+K9s𝞪 currently offers two main license types namely PowerOne and PowerTwo.
 Licenses are valid for a whole year from the time of purchase.
 
 ## PowerOne
@@ -49,4 +49,4 @@ PowerTwo licenses are targeted for power users and enterprise users needing to t
 
 ## Alpha Packs
 
-For corporate licenses, education, non-profits and special cases, please reach out to us so we can provide the best plan and pricing for your needs.
+For corporate licenses, education, non-profits and special cases, etc..., please reach out to us so we can devise the best plan for your needs.
