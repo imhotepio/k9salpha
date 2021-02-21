@@ -15,7 +15,7 @@ Licenses are valid for a whole year from the time of purchase.
 
 ## PowerOne
 
-PowerI licenses targets light Kubernetes cluster usage and provides the following features:
+PowerOne licenses target light Kubernetes cluster usage and provides the following features:
 
 1. Access to primordial standard resources:
    1. Node
@@ -39,11 +39,13 @@ PowerI licenses targets light Kubernetes cluster usage and provides the followin
 
 ## PowerTwo
 
-PowerII licenses are targeted to enterprise users or users wanting to take full advantages of all K9s features.
+PowerTwo licenses are targeted for power users and enterprise users needing to take full advantages of all K9sAlpha features.
 
 1. Access to all available cluster resources including CRDs
 2. Unlimited resource instances
 3. Access to new upcoming K9sAlpha features such as workloads and cluster scans
+4. Priority issues support and bug fixes
+5. Priority feature enhancements and requests
 
 ## Alpha Packs
 
