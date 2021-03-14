@@ -17,7 +17,7 @@ for changes and offers subsequent commands to interact with your observed resour
 
 [Historical Documents](https://k9salpha.io)
 
-# Videos
+## Videos
 
 - [K9sAlpha-v1.0.0-rc.0](https://youtu.be/hLYK0oPLOIY)
 - [K9sAlpha-v1.0.0-rc.1](https://youtu.be/upn-bvFT-ro)
