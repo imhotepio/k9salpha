@@ -1,79 +1,123 @@
+# K9s stock skin
+
+black: &black "#000000"
+white: &white "#ffffff"
+dodgerblue: &dodgerblue "#1e90ff"
+blue: &blue "#5f9ea0"
+fuchsia: &fuchsia "#ff00ff"
+aqua: &aqua "#66ffff"
+steelblue: &steelblue "#4682b4"
+lightskyblue: &lightskyblue "#87cefa"
+greenyellow: &greenyellow "#32cd32"
+orange: &orange "#ffa500"
+darkorange: &darkorange "#ff8c00"
+orangered: &orangered "#ff4500"
+mediumpurple: &mediumpurple "#800080"
+gray: &gray "#778899"
+papayawhip: &papayawhip "#ffefd5"
+limegreen: &limegreen "#32cd32"
+darkgoldenrod: &darkgoldenrod "#daa520"
+coolblue: &coolblue "#3333ff"
+darkolive: &darkolive "#556b2f"
+darkpurple: &darkpurple "#cc00cc"
+
 k9s:
   body:
-    fgColor: dodgerblue
-    bgColor: black
-    logoColor: orange
+    fgColor: *dodgerblue
+    bgColor: *black
+    logoColor: *orange
   info:
-    fgColor: white
-    sectionColor: dodgerblue
+    fgColor: *orange
+    sectionColor: *dodgerblue
   dialog:
-    fgColor: dodgerblue
-    bgColor: black
-    buttonFgColor: black
-    buttonBgColor: dodgerblue
-    buttonFocusFgColor: white
-    buttonFocusBgColor: fuchsia
-    labelFgColor: fuchsia
-    fieldFgColor: dodgerblue
+    fgColor: *dodgerblue
+    bgColor: *black
+    buttonFgColor: *black
+    buttonBgColor: *dodgerblue
+    buttonFocusFgColor: *white
+    buttonFocusBgColor: *fuchsia
+    labelFgColor: *fuchsia
+    fieldFgColor: *dodgerblue
   frame:
     border:
-      fgColor: dodgerblue
-      focusColor: aqua
+      fgColor: *dodgerblue
+      focusColor: *aqua
     menu:
-      fgColor: white
-      keyColor: dodgerblue
-      numKeyColor: fuchsia
+      fgColor: *white
+      keyColor: *dodgerblue
+      numKeyColor: *fuchsia
     crumbs:
-      fgColor: black
-      bgColor: steelblue
-      activeColor: orange
+      fgColor: *black
+      bgColor: *steelblue
+      activeColor: *orange
     status:
-      newColor: lightskyblue
-      modifyColor: greenyellow
-      addColor: white
-      errorColor: orangered
-      pendingColor: darkorange
-      highlightcolor: aqua
-      killColor: mediumpurple
-      completedColor: gray
+      newColor: *lightskyblue
+      modifyColor: *greenyellow
+      addColor: *aqua
+      errorColor: *orangered
+      pendingColor: *darkorange
+      highlightcolor: *aqua
+      killColor: *mediumpurple
+      completedColor: *gray
     title:
-      fgColor: aqua
-      highlightColor: fuchsia
-      counterColor: papayawhip
-      filterColor: steelblue
+      fgColor: *aqua
+      highlightColor: *fuchsia
+      counterColor: *papayawhip
+      filterColor: *steelblue
   views:
-    # Charts skins...
+    details:
+      fgColor: *white
+      bgColor: *black
+      errors: *orangered
+      happy: *greenyellow
+      labels:
+        key: *white
+        value: *darkpurple
+        borderColor: *steelblue
+      annotations:
+        key: *white
+        value: *coolblue
+        borderColor: *darkolive
     charts:
-      bgColor: black
+      bgColor: *black
       defaultDialColors:
-        - linegreen
-        - orangered
+        - *limegreen
+        - *orangered
       defaultChartColors:
-        - linegreen
-        - orangered
+        - *limegreen
+        - *orangered
+      resourceColors:
+        cpu:
+          - *darkpurple
+          - *orange
+          - *orangered
+        mem:
+          - *limegreen
+          - *orange
+          - *orangered
     table:
-      fgColor: blue
-      bgColor: black
-      cursorFgColor: black
-      cursorBgColor: aqua
-      markColor: darkgoldenrod
+      fgColor: *blue
+      bgColor: *black
+      cursorFgColor: *black
+      cursorBgColor: *aqua
+      markColor: *darkgoldenrod
       header:
-        fgColor: white
-        bgColor: black
-        sorterColor: orange
+        fgColor: *white
+        bgColor: *black
+        sorterColor: *orange
     xray:
-      fgColor: blue
-      bgColor: black
-      cursorColor: aqua
-      graphicColor: darkgoldenrod
+      fgColor: *blue
+      bgColor: *black
+      cursorColor: *aqua
+      graphicColor: *darkgoldenrod
       showIcons: false
     yaml:
-      keyColor: steelblue
-      colonColor: white
-      valueColor: papayawhip
+      keyColor: *steelblue
+      colonColor: *white
+      valueColor: *papayawhip
     logs:
-      fgColor: white
-      bgColor: black
+      fgColor: *white
+      bgColor: *black
       indicator:
-        fgColor: dodgerblue
-        bgColor: black
+        fgColor: *dodgerblue
+        bgColor: *black

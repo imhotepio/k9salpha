@@ -7,7 +7,7 @@ text: &text "navajowhite"
 white: &white "whitesmoke"
 ghost: &ghost "ghostwhite"
 dslate: &dslate "darkslategray"
-err: &err "pink"
+err: &err "red"
 slate: &slate "slategray"
 gray: &gray "gray"
 
@@ -55,6 +55,19 @@ k9s:
       counterColor: *text
       filterColor: *slate
   views:
+    details:
+      fgColor: *fg
+      bgColor: *bg
+      errors: *err
+      happy: *ghost
+      labels:
+        key: *white
+        value: *fg
+        borderColor: *slate
+      annotations:
+        key: *white
+        value: *ghost
+        borderColor: *slate
     table:
       fgColor: *fg
       bgColor: *bg
@@ -69,7 +82,7 @@ k9s:
       fgColor: *fg
       bgColor: *bg
       cursorColor: *ghost
-      graphicColor: gray
+      graphicColor: *slate
       showIcons: false
     yaml:
       keyColor: *ghost
@@ -82,10 +95,19 @@ k9s:
         fgColor: *ghost
         bgColor: *bg
     charts:
-      bgColor: default
+      bgColor: *bg
       defaultDialColors:
         - *white
         - *err
       defaultChartColors:
         - *white
         - *err
+      resourceColors:
+        cpu:
+          - *white
+          - *ghost
+          - *err
+        mem:
+          - *dslate
+          - *slate
+          - *err

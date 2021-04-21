@@ -1,79 +1,107 @@
+fg: &fg "#97979b"
+bg: &bg "#282a36"
+green: &green "#5af78e"
+white: &white "#ffffff"
+lblue: &lblue "#57c7ff"
+pink: &pink "#ff6ac1"
+yellow: &yellow "#f3f99d"
+lgray: &lgray "#eff0eb"
+red: &red "#ff5c57"
+purple: &purple "#cc33ff"
+gray: &gray "#b3b3b3"
+blue: &blue "#57c7ff"
+orange: &orange "#ffcc66"
+gold: &gold "#ff9900"
+
 k9s:
   body:
-    fgColor: "#97979b"
-    bgColor: "#282a36"
-    logoColor: "#5af78e"
+    fgColor: &fg
+    bgColor: &bg
+    logoColor: *green
   info:
-    fgColor: white
-    sectionColor: "#5af78e"
+    fgColor: *white
+    sectionColor: *green
   dialog:
-    fgColor: "#97979b"
-    bgColor: "#282a36"
-    buttonFgColor: "#97979b"
-    buttonBgColor: "#282a36"
-    buttonFocusFgColor: "#97979b"
-    buttonFocusBgColor: "#5af78e"
-    labelFgColor: "#97979b"
-    fieldFgColor: "#5af78e"
+    fgColor: &fg
+    bgColor: &bg
+    buttonFgColor: &fg
+    buttonBgColor: &bg
+    buttonFocusFgColor: &fg
+    buttonFocusBgColor: *green
+    labelFgColor: &fg
+    fieldFgColor: *green
   frame:
     border:
-      fgColor: "#5af78e"
-      focusColor: "#5af78e"
+      fgColor: *green
+      focusColor: *green
     menu:
-      fgColor: white
-      keyColor: "#57c7ff"
-      numKeyColor: "#ff6ac1"
+      fgColor: *white
+      keyColor: *lblue
+      numKeyColor: *pink
     crumbs:
-      fgColor: "#282a36"
-      bgColor: white
-      activeColor: "#f3f99d"
+      fgColor: &bg
+      bgColor: *white
+      activeColor: *pink
     status:
-      newColor: "#eff0eb"
-      modifyColor: "#5af78e"
-      addColor: "#57c7ff"
-      errorColor: "#ff5c57"
-      highlightcolor: "#f3f99d"
-      killColor: mediumpurple
-      completedColor: gray
+      newColor: *lgray
+      modifyColor: *green
+      addColor: *lblue
+      errorColor: *red
+      highlightcolor: *pink
+      killColor: *purple
+      completedColor: *gray
     title:
-      fgColor: "#5af78e"
-      bgColor: "#282a36"
-      highlightColor: white
-      counterColor: white
-      filterColor: "#57c7ff"
+      fgColor: *green
+      bgColor: &bg
+      highlightColor: *white
+      counterColor: *white
+      filterColor: *lblue
   views:
+    details:
+      fgColor: *fg
+      bgColor: *bg
+      errors: *red
+      happy: *green
+      labels:
+        key: *white
+        value: *green
+        borderColor: *green
+      annotations:
+        key: *white
+        value: *purple
+        borderColor: *pink
     # Charts skins...
     charts:
-      bgColor: default
+      bgColor: *bg
       defaultDialColors:
-        - "#57c7ff"
-        - "#ff5c57"
+        - *blue
+        - *red
       defaultChartColors:
-        - "#57c7ff"
-        - "#ff5c57"
+        - *blue
+        - *red
     table:
-      fgColor: "#57c7ff"
-      bgColor: "#282a36"
-      cursorFgColor: "#57c7ff"
-      cursorBgColor: "#5af78e"
-      markColor: darkgoldenrod
+      fgColor: *lblue
+      bgColor: &bg
+      cursorFgColor: *lblue
+      cursorBgColor: *green
+      markColor: *gold
       header:
-        fgColor: white
-        bgColor: "#282a36"
-        sorterColor: orange
+        fgColor: *white
+        bgColor: &bg
+        sorterColor: *orange
     xray:
-      fgColor: "#57c7ff"
-      bgColor: "#282a36"
-      cursorColor: "#5af78e"
-      graphicColor: darkgoldenrod
+      fgColor: *lblue
+      bgColor: &bg
+      cursorColor: *green
+      graphicColor: *gold
       showIcons: false
     yaml:
-      keyColor: "#ff5c57"
-      colonColor: white
-      valueColor: "#f3f99d"
+      keyColor: *blue
+      colonColor: *white
+      valueColor: *pink
     logs:
-      fgColor: white
-      bgColor: "#282a36"
+      fgColor: *white
+      bgColor: &bg
       indicator:
-        fgColor: white
-        bgColor: "#282a36"
+        fgColor: *white
+        bgColor: &bg

@@ -56,14 +56,39 @@ k9s:
       counterColor: *foreground
       filterColor: *blue
   views:
+    details:
+      fgColor: *foreground
+      bgColor: *background
+      errors: *orange
+      happy: *green
+      labels:
+        key: *foreground
+        value: *green
+        borderColor: *blue
+      annotations:
+        key: *foreground
+        value: *grey
+        borderColor: *purple
+    # Charts skins...
     charts:
       bgColor: *background
+      dialBgColor: *background
+      chartBgColor: *background
       defaultDialColors:
-        - *green
+        - *blue
         - *red
       defaultChartColors:
-        - *green
+        - *blue
         - *red
+      resourceColors:
+        cpu:
+          - *blue
+          - *orange
+          - *red
+        mem:
+          - *purple
+          - *orange
+          - *red
     table:
       fgColor: *yellow
       bgColor: *background

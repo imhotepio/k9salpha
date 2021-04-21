@@ -40,6 +40,7 @@ k9s:
       focusColor: *current_line
     menu:
       fgColor: *foreground
+      bgColor: *background
       keyColor: *pink
       # Used for favorite namespaces
       numKeyColor: *pink
@@ -65,15 +66,40 @@ k9s:
       counterColor: *purple
       filterColor: *pink
   views:
+    # Details view
+    details:
+      fgColor: *foreground
+      bgColor: *background
+      errors: *orange
+      happy: *green
+      labels:
+        key: *foreground
+        value: *purple
+        borderColor: *pink
+      annotations:
+        key: *foreground
+        value: *purple
+        borderColor: *cyan
     # Charts skins...
     charts:
-      bgColor: default
+      bgColor: *background
+      dialBgColor: *background
+      chartBgColor: *background
       defaultDialColors:
         - *purple
         - *red
       defaultChartColors:
         - *purple
         - *red
+      resourceColors:
+        cpu:
+          - *purple
+          - *orange
+          - *red
+        mem:
+          - *cyan
+          - *orange
+          - *red
     # TableView attributes.
     table:
       fgColor: *foreground

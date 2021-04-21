@@ -1,4 +1,5 @@
-# monokai.yml
+# Monokai Skin
+
 # Styles...
 foreground: &foreground "#ffffff"
 background: &background "default"
@@ -65,11 +66,24 @@ k9s:
       counterColor: *lightBlue
       filterColor: *orange
   views:
+    details:
+      fgColor: *foreground
+      bgColor: *background
+      errors: *orange
+      happy: *green
+      labels:
+        key: *foreground
+        value: *darkBlue
+        borderColor: *lightBlue
+      annotations:
+        key: *foreground
+        value: *purple
+        borderColor: *purple
     # Charts skins...
     charts:
       bgColor: *background
       dialBgColor: *background
-      chartBgColor: *backgroundOpaque
+      chartBgColor: *background
       defaultDialColors:
         - *blue
         - *magenta
@@ -77,24 +91,14 @@ k9s:
         - *blue
         - *magenta
       resourceColors:
-        batch/v1/jobs:
-          - *blue
-          - *magenta
-        v1/persistentvolumes:
-          - *blue
-          - *magenta
         cpu:
           - *blue
           - *magenta
+          - *orange
         mem:
-          - *blue
           - *magenta
-        v1/events:
           - *blue
-          - *magenta
-        v1/pods:
-          - *blue
-          - *magenta      
+          - *orange
     # TableView attributes.
     table:
       fgColor: *foreground

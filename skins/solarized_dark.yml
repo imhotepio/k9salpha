@@ -1,4 +1,5 @@
-# # K9s Solarized Dark Skin Contributed by [@danmikita](danmikita@gmail.com)
+# K9s Solarized Dark Skin Contributed by [@danmikita](danmikita@gmail.com)
+
 foreground: &foreground "#839496"
 background: &background "#002b36"
 current_line: &current_line "#073642"
@@ -55,14 +56,38 @@ k9s:
       counterColor: *blue
       filterColor: *magenta
   views:
+    details:
+      fgColor: *foreground
+      bgColor: *background
+      errors: *red
+      happy: *green
+      labels:
+        key: white
+        value: *orange
+        borderColor: *green
+      annotations:
+        key: white
+        value: *cyan
+        borderColor: *blue
     charts:
-      bgColor: default
+      bgColor: *background
+      dialBgColor: *background
+      chartBgColor: *background
       defaultDialColors:
-        - *blue
+        - *green
         - *red
       defaultChartColors:
-        - *blue
+        - *green
         - *red
+      resourceColors:
+        cpu:
+          - *blue
+          - *magenta
+          - *orange
+        mem:
+          - *magenta
+          - *blue
+          - *orange
     table:
       fgColor: *foreground
       bgColor: *background
